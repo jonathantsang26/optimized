@@ -75,9 +75,7 @@ function useScrollProgress() {
   return p
 }
 
-function Heading({ children }: { children: React.ReactNode }) {
-  return <h2 className="ptcom-design__headline__3mwz99"><span className="ptcom-design__headlineText__3mwz99" style={{clipPath:'inset(0%)'}}>{children}</span></h2>
-}
+
 
 function PSection({ id, bg = 'light', title, children }:{ id:string; bg?:'light'|'dark'; title:string; children:React.ReactNode }){
   const dataBg = bg === 'dark' ? 'dark' : 'light'

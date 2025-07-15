@@ -9,7 +9,7 @@ export default function PrivacyPolicyPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">1. Introduction</h2>
         <p>
-          Optimized ("Company," "we," "our," or "us") respects your privacy and is committed to protecting it through our compliance with this policy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit <a href="https://optimizedhq.com" className="text-blue-600 underline">https://optimizedhq.com</a> (the "Site") or use any related services (collectively, the "Services").
+          Optimized (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting it through our compliance with this policy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit <a href="https://optimizedhq.com" className="text-blue-600 underline">https://optimizedhq.com</a> (the &quot;Site&quot;) or use any related services (collectively, the &quot;Services&quot;).
         </p>
       </section>
 

@@ -86,28 +86,7 @@ function useScrollProgress() {
   return p
 }
 
-function Heading({ children }: { children: React.ReactNode }) {
-  return <h2 className="ptcom-design__headline__3mwz99"><span className="ptcom-design__headlineText__3mwz99" style={{clipPath:'inset(0%)'}}>{children}</span></h2>
-}
 
-function PSection({ id, bg = 'light', title, children }:{ id:string; bg?:'light'|'dark'; title:string; children:React.ReactNode }){
-  const dataBg = bg === 'dark' ? 'dark' : 'light'
-  return (
-    <section id={id} className="ptcom-design__headerSectionWrap__3mwz99" data-background={dataBg}>
-      <div className="ptcom-design__headerSection__3mwz99">
-        <div className="ptcom-design__headerSectionOverlay__3mwz99" aria-hidden="true" />
-        <div className="ptcom-design__subHeader__3mwz99">
-          <div className="ptcom-design__subHeader__13ywd4e ptcom-design__subHeaderBorder__13ywd4e">
-            <div>Research</div>
-            <div>{title}</div>
-          </div>
-        </div>
-        <div className="inner space-y-6 mt-10">
-          {children}
-        </div>
-      </div>
-    </section>
-  )
 }
 
 function Card({ title, body, href, ear }: { title: string; body: string; href: string; ear: string }) {

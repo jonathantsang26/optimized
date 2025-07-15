@@ -2,9 +2,7 @@
 
 import { useState } from 'react'
 
-const COUNTRIES = [
-  'United States', 'Canada', 'United Kingdom', 'Australia', 'Germany', 'France', 'India', 'China', 'Japan', 'Brazil', 'Other'
-]
+
 
 export default function GetStartedPage() {
   const [form, setForm] = useState({

@@ -9,13 +9,9 @@ const NAV_ITEMS = [
   { href: '/about', label: 'About' },
 ]
 
-export default function Header({ scrollY }: { scrollY: number }) {
+export default function Header({ scrollY: _scrollY }: { scrollY: number }) {
   const [open, setOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-
-  const handleDropdownToggle = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label)
-  }
 
   const closeAllDropdowns = () => {
     setActiveDropdown(null)

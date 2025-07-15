@@ -99,7 +99,6 @@ export default function HowItWorksSection() {
         <div className="flex flex-col gap-16 min-w-0 flex-1">
           {STEPS.map((step, idx) => (
             <article
-              /* eslint-disable-next-line react/no-array-index-key */
               key={step.id}
               ref={(el: HTMLDivElement | null) => {
                 cardRefs.current[idx] = el
