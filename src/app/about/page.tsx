@@ -4,20 +4,12 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import GlobalStyles from '@/components/GlobalStyles'
-import { useState, useEffect } from 'react'
 
 export default function AboutPage() {
-  const [scrollY, setScrollY] = useState(0)
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <>
       <GlobalStyles />
-      <Header scrollY={scrollY} />
+      <Header />
       <main className="min-h-screen bg-gradient-to-br pt-24 from-blue-950 via-black to-purple-950 text-white font-sans">
         <section className="max-w-4xl mx-auto px-6 py-24 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About Optimized AI</h1>
