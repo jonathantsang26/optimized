@@ -96,7 +96,7 @@ interface TestimonialCard {
                   {testimonial.org}
                 </p>
                 <blockquote className="text-gray-800 text-lg leading-relaxed mb-6">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </blockquote>
                 <div className="border-t border-gray-200 pt-4">
                   <p className="text-gray-900 font-medium">{testimonial.person}</p>

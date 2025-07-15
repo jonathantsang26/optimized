@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X, ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
 import React from 'react'
+import Image from 'next/image'
 
 /* ────────────────────────────────────────────────────────────────────────────
   NAV METADATA
@@ -146,7 +147,7 @@ export default function OptiMUSWarpStylePage() {
 
       {/* HERO */}
       <section id="hero" className="relative h-[88vh] flex items-center justify-center overflow-hidden">
-        <img src="/hero-placeholder.jpg" alt="abstract network" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none" />
+        <Image src="/hero-placeholder.jpg" alt="abstract network" fill className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none" />
         <div className="relative z-10 text-center">
           <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tight">
             {word.map((ch, i) => (

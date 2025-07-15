@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">11. Changes to This Privacy Policy</h2>
         <p>
-          We will post any changes on this page and update the "Effective Date" above. Material changes will be notified via email or prominent notice on the Site.
+          We will post any changes on this page and update the &quot;Effective Date&quot; above. Material changes will be notified via email or prominent notice on the Site.
         </p>
       </section>
 

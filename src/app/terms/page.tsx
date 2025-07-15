@@ -9,14 +9,14 @@ export default function TermsPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">1. Acceptance of Terms</h2>
         <p>
-          By accessing or using the Site or Services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the Services.
+          By accessing or using the Site or Services, you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree, do not use the Services.
         </p>
       </section>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">2. Modifications to Terms</h2>
         <p>
-          We may modify these Terms at any time. Updated Terms will be posted on this page with a revised "Effective Date." Continued use constitutes acceptance.
+          We may modify these Terms at any time. Updated Terms will be posted on this page with a revised &quot;Effective Date.&quot; Continued use constitutes acceptance.
         </p>
       </section>
 

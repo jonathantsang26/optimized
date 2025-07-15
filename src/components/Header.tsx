@@ -9,12 +9,10 @@ const NAV_ITEMS = [
   { href: '/about', label: 'About' },
 ]
 
-export default function Header({ scrollY: _scrollY }: { scrollY: number }) {
+export default function Header() {
   const [open, setOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   const closeAllDropdowns = () => {
-    setActiveDropdown(null)
     setOpen(false)
   }
 

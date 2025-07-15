@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface TestimonialCard {
   org: string
@@ -91,7 +92,7 @@ export default function TestimonialsWithCTASection() {
                 {testimonial.org}
               </p>
               <blockquote className="text-gray-800 text-lg leading-relaxed mb-6">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </blockquote>
               <div className="border-t border-gray-200 pt-4">
                 <p className="text-gray-900 font-medium">{testimonial.person}</p>
@@ -114,7 +115,7 @@ export default function TestimonialsWithCTASection() {
           </div>
           {/* Right: Large image */}
           <div className="flex-1 flex justify-center h-full min-h-[20rem]">
-            <img src="/aiDriven.jpg" alt="AI Driven" className="w-full h-full rounded-xl object-cover shadow-md" />
+            <Image src="/aiDriven.jpg" alt="AI Driven" width={600} height={400} className="w-full h-full rounded-xl object-cover shadow-md" />
           </div>
         </div>
       </div>

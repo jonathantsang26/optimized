@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { KeenSliderPlugin } from 'keen-slider/react'
+import Image from 'next/image'
 
 interface Feature {
     label: string
@@ -224,9 +225,10 @@ interface Feature {
                 transition: 'transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.6s cubic-bezier(0.4,0,0.2,1)',
               }}
             >
-              <img 
+              <Image 
                 src={feature.img} 
                 alt={feature.title} 
+                fill
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-black/50 to-transparent transition-transform duration-300">

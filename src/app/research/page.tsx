@@ -85,10 +85,6 @@ function useScrollProgress() {
   }, [])
   return p
 }
-
-
-}
-
 function Card({ title, body, href, ear }: { title: string; body: string; href: string; ear: string }) {
   return (
     <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
