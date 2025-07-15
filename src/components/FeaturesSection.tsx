@@ -162,12 +162,12 @@ interface Feature {
       <section id="features" className="relative pt-32 pb-32 overflow-hidden bg-[#f9fafb] bg-light">
         <div className="max-w mx-auto px-4 mb-16">
           <div className="highlighted-features bordered has-heading mb-12">
-            <div className="heading mb-8 text-left" style={{ marginLeft: '11%' }}>
-              <h3 className="text-4xl md:text-5xl font-bold text-gray-900">Research Foci</h3>
+            <div className="heading mb-8 text-left md:text-left text-center" style={{ marginLeft: '0', marginRight: '0' }}>
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Research Foci</h3>
             </div>
             <div className="overflow-x-auto">
-              <div className="flex justify-start" style={{ marginLeft: '10%' }}>
-                <ul className="flex space-x-4 min-w-max px-4">
+              <div className="flex justify-center md:justify-start" style={{ marginLeft: '0', marginRight: '0' }}>
+                <ul className="flex space-x-2 md:space-x-4 min-w-max px-2 md:px-4">
                   {FEATURES.map((feature, index) => (
                     <li key={feature.label} className="flex-shrink-0">
                       <button
@@ -175,14 +175,14 @@ interface Feature {
                           slider.current?.moveToIdx(index)
                           resetAutoScroll()
                         }}
-                        className={`icon-icon item flex flex-col items-center p-4 rounded-lg transition-all duration-300 border-2 w-36 ${
+                        className={`icon-icon item flex flex-col items-center p-2 md:p-4 rounded-lg transition-all duration-300 border-2 w-24 md:w-36 ${
                           index === current
                             ? 'border-blue-600 bg-blue-50 text-blue-600'
                             : 'border-gray-200 bg-white text-gray-600 hover:border-blue-400 hover:text-blue-600'
                         }`}
                       >
-                        <div className="w-10 h-10 mb-3 flex items-center justify-center">
-                          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon">
+                        <div className="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 flex items-center justify-center">
+                          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon">
                             <path 
                               d="M20 6.20312L20 33.7939M20 6.20312L12 14.2031M20 6.20312L28 14.2031" 
                               stroke="currentColor" 
@@ -211,7 +211,7 @@ interface Feature {
   
         <div
           ref={ref}
-          className="keen-slider h-[70vh] px-4"
+          className="keen-slider h-[50vh] md:h-[70vh] px-4"
           onMouseEnter={pauseAutoScroll}
           onMouseLeave={resetAutoScroll}
         >
@@ -231,11 +231,11 @@ interface Feature {
                 fill
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-black/50 to-transparent transition-transform duration-300">
-                <p className="text-white text-sm font-medium mb-2 uppercase tracking-wider drop-shadow-sm">
+              <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-10 bg-gradient-to-t from-black/50 to-transparent transition-transform duration-300">
+                <p className="text-white text-xs md:text-sm font-medium mb-1 md:mb-2 uppercase tracking-wider drop-shadow-sm">
                   {feature.tag}
                 </p>
-                <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight drop-shadow-sm whitespace-nowrap">
+                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-sm">
                   {feature.title}
                 </h3>
               </div>
@@ -248,20 +248,20 @@ interface Feature {
             slider.current?.prev()
             resetAutoScroll()
           }}
-          className="absolute left-6 top-1/2 -translate-y-1/2 z-100 rounded-full bg-black text-white border border-gray-300 p-4 hover:bg-gray-800 transition-colors shadow-lg"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-100 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} className="md:w-6 md:h-6" />
         </button>
         <button
           onClick={() => {
             slider.current?.next()
             resetAutoScroll()
           }}
-          className="absolute right-6 top-1/2 -translate-y-1/2 z-100 rounded-full bg-black text-white border border-gray-300 p-4 hover:bg-gray-800 transition-colors shadow-lg"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-100 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
           aria-label="Next slide"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={20} className="md:w-6 md:h-6" />
         </button>
       </section>
     )

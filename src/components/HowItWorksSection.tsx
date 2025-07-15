@@ -73,18 +73,18 @@ export default function HowItWorksSection() {
   return (
     <section
       id="explain"
-      className="relative w-full bg-[#f9fafb] px-4 md:px-12 lg:px-24 py-32"
+      className="relative w-full bg-[#f9fafb] px-4 md:px-12 lg:px-24 py-16 md:py-32"
     >
-      <div className="mx-auto max-w-7xl gap-y-16 lg:flex lg:gap-x-20">
+      <div className="mx-auto max-w-7xl gap-y-12 md:gap-y-16 lg:flex lg:gap-x-20">
         {/* ------------------------------------------------------------------
             LEFT (sticky) – headline & paragraph
         ------------------------------------------------------------------ */}
         <div className="lg:w-[36rem] lg:pr-0">
-          <div className="sticky top-20 md:top-150 space-y-10 lg:max-w-md text-left">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 text-left">
+          <div className="lg:sticky lg:top-20 md:top-150 space-y-6 md:space-y-10 lg:max-w-md text-left">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 text-left">
               Procurement Automation
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-600 text-left">
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-gray-600 text-left">
               Optimized integrates with your existing systems and uses AI trained
               on supply‑chain workflows to automate everything
               from proactively checking orders to running an entire RFQ process
@@ -96,7 +96,7 @@ export default function HowItWorksSection() {
         {/* ------------------------------------------------------------------
             RIGHT – scrolling cards
         ------------------------------------------------------------------ */}
-        <div className="flex flex-col gap-16 min-w-0 flex-1">
+        <div className="flex flex-col gap-8 md:gap-16 min-w-0 flex-1 mt-8 lg:mt-0">
           {STEPS.map((step, idx) => (
             <article
               key={step.id}
@@ -124,21 +124,21 @@ export default function HowItWorksSection() {
               </div>
 
               {/* copy */}
-              <div className="space-y-7 p-16 bg-white">
+              <div className="space-y-4 md:space-y-7 p-6 md:p-16 bg-white">
                 <div className="flex items-center gap-3">
-                  <span className="text-xl font-semibold tracking-widest text-gray-400">
+                  <span className="text-lg md:text-xl font-semibold tracking-widest text-gray-400">
                     {step.id.toString().padStart(2, '0')}
                   </span>
                   <div className="h-px flex-1 bg-gradient-to-r from-blue-600 to-purple-500" />
                 </div>
 
-                <h3 className="text-4xl md:text-5xl font-bold text-gray-900">
+                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900">
                   {step.headline}
                 </h3>
 
-                <p className="text-blue-600 font-semibold text-2xl md:text-3xl">{step.blurb}</p>
+                <p className="text-blue-600 font-semibold text-lg md:text-2xl lg:text-3xl">{step.blurb}</p>
 
-                <p className="text-gray-600 leading-relaxed">{step.detail}</p>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">{step.detail}</p>
               </div>
             </article>
           ))}

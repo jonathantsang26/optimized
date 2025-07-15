@@ -18,25 +18,25 @@ export default function HeroSection({ scrollY }: { scrollY: number }) {
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         />
         
-        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight text-shadow">
-            <span className="moving-gradient block mb-4">AI-Powered</span>
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-6xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight text-shadow">
+            <span className="moving-gradient block mb-2 md:mb-4">AI-Powered</span>
             Procurement
           </h1>
-          <p className="mt-8 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-4 md:mt-8 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
           Advancing global logistics through open research, data-centric models, and collaborative AI innovation
             
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
           </div>
         </div>
 
         {/* Scroll Indicator - now visible on all screen sizes, with enhanced style */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-8 z-20 flex flex-col items-center animate-bounce select-none">
-          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white opacity-90 drop-shadow-lg">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 z-20 flex flex-col items-center animate-bounce select-none">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white opacity-90 drop-shadow-lg md:w-8 md:h-8">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
           </svg>
-          <span className="mt-2 text-white text-sm opacity-90 tracking-wide drop-shadow">Scroll Down</span>
+          <span className="mt-1 md:mt-2 text-white text-xs md:text-sm opacity-90 tracking-wide drop-shadow">Scroll Down</span>
         </div>
       </section>
     )

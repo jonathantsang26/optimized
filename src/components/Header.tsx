@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed left-1/2 -translate-x-1/2 mt-6 z-50 transition-all duration-300 ease-out bg-white/30 backdrop-blur-sm rounded-full px-4 py-2 shadow-md max-w-4xl w-[95%] border border-white/10"
+      className="fixed left-1/2 -translate-x-1/2 mt-4 md:mt-6 z-50 transition-all duration-300 ease-out bg-white/30 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 shadow-md max-w-4xl w-[98%] md:w-[95%] border border-white/10"
       style={{ top: 'var(--announcement-height, 0px)' }}
     >
       {/* Main navigation bar */}
@@ -29,12 +29,12 @@ export default function Header() {
           className="group flex items-center space-x-1 transition-all duration-300 hover:scale-105"
         >
           <div className="relative">
-            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+            <div className="h-5 w-5 md:h-6 md:w-6 rounded-md bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
               <span className="text-black font-bold text-xs">O</span>
             </div>
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md blur opacity-100 group-hover:opacity-30 transition duration-300"></div>
           </div>
-          <span className="text-lg font-bold bg-gradient-to-r from-black to-gray-500 bg-clip-text text-transparent header-text">
+          <span className="text-base md:text-lg font-bold bg-gradient-to-r from-black to-gray-500 bg-clip-text text-transparent header-text">
             Optimized
           </span>
         </Link>
@@ -71,71 +71,59 @@ export default function Header() {
 
         {/* Mobile menu toggle */}
         <button
-          className="lg:hidden relative p-1 text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md"
+          className="lg:hidden relative p-2 text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-controls="mobile-nav"
           aria-expanded={open}
           onClick={() => setOpen((prev) => !prev)}
         >
-          <div className="relative w-5 h-5 flex flex-col justify-center items-center">
-            <span className={`block h-0.5 w-5 bg-current rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-            <span className={`block h-0.5 w-5 bg-current rounded transition-all duration-300 my-0.5 ${open ? 'opacity-0' : ''}`}></span>
-            <span className={`block h-0.5 w-5 bg-current rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          <div className="relative w-6 h-6 flex flex-col justify-center items-center">
+            <span className={`block h-0.5 w-6 bg-current rounded transition-all duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-current rounded transition-all duration-300 my-0.5 ${open ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-current rounded transition-all duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
           </div>
         </button>
       </div>
 
       {/* Mobile drawer */}
-      <div className={`lg:hidden transition-all duration-300 ease-out ${
-        open 
-          ? 'opacity-100 visible translate-y-0' 
-          : 'opacity-0 invisible -translate-y-4'
-      }`}>
-        <nav
-          id="mobile-nav"
-          className="mx-2 mb-2 rounded-2xl bg-black/90 backdrop-blur border border-white/10 shadow-xl"
-          aria-label="Mobile Navigation"
-        >
-          <div className="p-4">
-            <ul className="space-y-2">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.href}>
-                    <a
-                      href={item.href}
-                      className="block text-base font-medium text-gray-300 hover:text-white transition-colors duration-200 py-1 hover:drop-shadow-[0_2px_12px_rgba(0,0,0,1)]"
-                      onClick={closeAllDropdowns}
-                    >
-                      {item.label}
-                    </a>
-                </li>
-              ))}
-            </ul>
-            {/* Mobile actions */}
-            <div className="mt-4 pt-4 border-t border-white/10">
-              <div className="flex items-center justify-between mb-2">
-                <button className="p-1 text-gray-400 hover:text-white transition-colors duration-200">
-                  <Search size={18} />
-                </button>
-                <button className="p-1 text-gray-400 hover:text-white transition-colors duration-200 relative">
-                  <Bell size={18} />
-                  <span className="absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full"></span>
-                </button>
-                <button className="p-1 text-gray-400 hover:text-white transition-colors duration-200">
-                  <User size={18} />
-                </button>
+      {open && (
+        <div className="lg:hidden absolute top-full left-0 right-0 mt-2 transition-all duration-300 ease-out">
+          <nav
+            id="mobile-nav"
+            className="mx-2 rounded-2xl bg-black/90 backdrop-blur border border-white/10 shadow-xl"
+            aria-label="Mobile Navigation"
+          >
+            <div className="p-4">
+              <ul className="space-y-3">
+                {NAV_ITEMS.map((item) => (
+                  <li key={item.href}>
+                      <a
+                        href={item.href}
+                        className="block text-base font-medium text-gray-300 hover:text-white transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-white/10"
+                        onClick={closeAllDropdowns}
+                      >
+                        {item.label}
+                      </a>
+                  </li>
+                ))}
+              </ul>
+              {/* Mobile actions */}
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <div className="flex items-center justify-between mb-3">
+                </div>
+                <Link
+                  href="/get-started"
+                  className="relative block w-full rounded-full px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
+                  onClick={closeAllDropdowns}
+                >
+                  <span className="relative z-10">Get Started</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-0 hover:opacity-30 transition duration-300"></div>
+                </Link>
               </div>
-              <Link
-                href="/get-started"
-                className="relative block w-full rounded-full px-4 py-2 text-center text-xs font-semibold text-white transition-all duration-300 hover:scale-105"
-                onClick={closeAllDropdowns}
-              >
-                <span className="relative z-10">Get Started</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-0 hover:opacity-30 transition duration-300"></div>
-              </Link>
             </div>
-          </div>
-        </nav>
-      </div>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
