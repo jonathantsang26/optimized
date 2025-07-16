@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { Search, User, Bell } from 'lucide-react'
 import Link from 'next/link'
 
 const NAV_ITEMS = [
