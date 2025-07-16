@@ -81,10 +81,10 @@ export default function HowItWorksSection() {
         ------------------------------------------------------------------ */}
         <div className="lg:w-[36rem] lg:pr-0">
           <div className="lg:sticky lg:top-20 md:top-150 space-y-6 md:space-y-10 lg:max-w-md text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 text-left">
+            <h2 className="font-header2 text-gray-900 text-left">
               Procurement Automation
             </h2>
-            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-gray-600 text-left">
+            <p className="font-sans text-gray-600 text-left">
               Optimized integrates with your existing systems and uses AI trained
               on supply‑chain workflows to automate everything
               from proactively checking orders to running an entire RFQ process
@@ -132,13 +132,11 @@ export default function HowItWorksSection() {
                   <div className="h-px flex-1 bg-gradient-to-r from-blue-600 to-purple-500" />
                 </div>
 
-                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                <h3 className="font-header2 text-gray-900">
                   {step.headline}
                 </h3>
-
-                <p className="text-blue-600 font-semibold text-lg md:text-2xl lg:text-3xl">{step.blurb}</p>
-
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base">{step.detail}</p>
+                <p className="font-subtitle text-blue-600 font-semibold">{step.blurb}</p>
+                <p className="font-sans text-gray-600 leading-relaxed">{step.detail}</p>
               </div>
             </article>
           ))}

@@ -1,10 +1,34 @@
-@import "tailwindcss";
-@import "keen-slider/keen-slider.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://geistsans.com/font.css'); /* If available, otherwise this line is safe to leave */
 
-/* ────────────────────────────────
-   Custom global styles extracted
-   from the former <GlobalStyles />
-   ─────────────────────────────── */
+/* Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set default font for body */
+body {
+  @apply font-sans;
+}
+
+/* Custom font utility classes for headings and subtitles */
+.font-display {
+  font-family: 'Geist Sans', 'Inter', sans-serif;
+}
+.font-header, .font-header2 {
+  font-family: 'Geist Sans', 'Inter', sans-serif;
+}
+.font-sans {
+  font-family: 'Inter', 'system-ui', 'sans-serif';
+}
+.font-subtitle {
+  font-family: 'Inter', 'system-ui', 'sans-serif';
+  font-weight: 500;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', 'monospace';
+}
 
 /* Global dark background */
 html, body {
@@ -195,3 +219,44 @@ html, body {
 @media(max-width:768px){
   .carousel-card{width:80vw;max-width:80vw;margin-right:1rem;}
 }
+
+:root {
+  /* Font sizes */
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+  --font-5xl: 3rem;
+
+  /* Font weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 800;
+}
+
+/* Font utility classes */
+.font-header {
+  font-size: var(--font-5xl);
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+}
+.font-header2 {
+  font-size: var(--font-3xl);
+  font-weight: var(--font-semibold);
+  line-height: 1.15;
+}
+.font-subtitle {
+  font-size: var(--font-xl);
+  font-weight: var(--font-medium);
+  line-height: 1.2;
+}
+.font-body {
+  font-size: var(--font-base);
+  font-weight: var(--font-normal);
+  line-height: 1.5;
+}
+

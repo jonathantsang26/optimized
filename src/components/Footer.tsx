@@ -14,16 +14,16 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-5">
         {/* Brand */}
         <div className="space-y-4 md:col-span-2">
-          <div className="text-2xl font-bold tracking-tight">Optimized</div>
-          <p className="max-w-xs text-sm text-gray-400">
+          <div className="font-header2">Optimized</div>
+          <p className="font-sans max-w-xs text-gray-400">
             Applying the most important AI research in procurement
           </p>
         </div>
 
         {/* Research Links */}
         <div className="space-y-2">
-          <h4 className="mb-4 text-lg font-semibold">Research</h4>
-          <ul className="space-y-2 text-sm">
+          <h4 className="font-header2 mb-4">Research</h4>
+          <ul className="space-y-2 font-sans">
             <li>
               <a href="#features" className="transition-colors hover:text-blue-400">
                 Features
@@ -44,8 +44,8 @@ export default function Footer() {
 
         {/* Company Links */}
         <div className="space-y-2">
-          <h4 className="mb-4 text-lg font-semibold">Company</h4>
-          <ul className="space-y-2 text-sm">
+          <h4 className="font-header2 mb-4">Company</h4>
+          <ul className="space-y-2 font-sans">
             <li>
               <a href="#about" className="transition-colors hover:text-blue-400">
                 About
@@ -66,8 +66,8 @@ export default function Footer() {
 
         {/* Contact */}
         <div className="space-y-3">
-          <h4 className="mb-4 text-lg font-semibold">Contact</h4>
-          <ul className="space-y-3 text-sm">
+          <h4 className="font-header2 mb-4">Contact</h4>
+          <ul className="space-y-3 font-sans">
             <li className="flex items-center gap-2">
               <span className="text-blue-400">✉</span>
               <a

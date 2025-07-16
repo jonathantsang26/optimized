@@ -4,6 +4,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { KeenSliderPlugin } from 'keen-slider/react'
 import Image from 'next/image'
+import { KeenSliderInstance } from 'keen-slider'
 
 interface Feature {
     label: string
@@ -103,7 +104,7 @@ interface Feature {
         perView: 1.25,
         spacing: 32,
       },
-      slideChanged: (s) => setCurrent(s.track.details.rel),
+      slideChanged: (s: KeenSliderInstance) => setCurrent(s.track.details.rel),
       created: (s) => {
         s.container.style.height = '70vh'
       },
@@ -163,7 +164,7 @@ interface Feature {
         <div className="max-w mx-auto px-4 mb-16">
           <div className="highlighted-features bordered has-heading mb-12">
             <div className="heading mb-8 text-left md:text-left text-center" style={{ marginLeft: '0', marginRight: '0' }}>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Research Foci</h3>
+              <h3 className="font-header2 text-gray-900">Research Foci</h3>
             </div>
             <div className="overflow-x-auto">
               <div className="flex justify-center md:justify-start" style={{ marginLeft: '0', marginRight: '0' }}>
@@ -199,7 +200,7 @@ interface Feature {
                             />
                           </svg>
                         </div>
-                        <p className="copy text-xs font-medium text-center leading-tight px-1">{feature.label}</p>
+                        <p className="font-body text-center leading-tight px-1">{feature.label}</p>
                       </button>
                     </li>
                   ))}
@@ -222,7 +223,7 @@ interface Feature {
               style={{
                 transform: 'scale(var(--scale, 1))',
                 opacity: 'var(--opacity, 1)',
-                transition: 'transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.6s cubic-bezier(0.4,0,0.2,1)',
+                transition: 'transform 0.18s ease, opacity 0.18s ease',
               }}
             >
               <Image 
@@ -232,10 +233,10 @@ interface Feature {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-10 bg-gradient-to-t from-black/50 to-transparent transition-transform duration-300">
-                <p className="text-white text-xs md:text-sm font-medium mb-1 md:mb-2 uppercase tracking-wider drop-shadow-sm">
+                <p className="font-sans text-white mb-1 md:mb-2 uppercase tracking-wider drop-shadow-sm">
                   {feature.tag}
                 </p>
-                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-sm">
+                <h3 className="font-header2 text-white leading-tight drop-shadow-sm">
                   {feature.title}
                 </h3>
               </div>

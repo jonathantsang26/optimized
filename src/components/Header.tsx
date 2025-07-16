@@ -33,9 +33,7 @@ export default function Header() {
             </div>
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md blur opacity-100 group-hover:opacity-30 transition duration-300"></div>
           </div>
-          <span className="text-base md:text-lg font-bold bg-gradient-to-r from-black to-gray-500 bg-clip-text text-transparent header-text">
-            Optimized
-          </span>
+          <div className="font-header2">Optimized</div>
         </Link>
 
         {/* Desktop navigation */}
@@ -45,7 +43,7 @@ export default function Header() {
               <li key={item.href} className="relative group">
                   <a
                     href={item.href}
-                    className="text-xs font-medium text-black hover:text-white transition-colors duration-200 py-1 header-text hover:drop-shadow-[0_2px_12px_rgba(0,0,0,1)]"
+                    className="font-sans text-black hover:text-white transition-colors duration-200 py-1 header-text hover:drop-shadow-[0_2px_12px_rgba(0,0,0,1)]"
                     onClick={closeAllDropdowns}
                   >
                     {item.label}
@@ -60,7 +58,7 @@ export default function Header() {
           {/* Get Started button */}
           <Link
             href="/get-started"
-            className="relative inline-flex h-8 items-center justify-center rounded-full px-4 text-xs font-semibold text-white transition-all duration-300 hover:scale-105"
+            className="relative inline-flex h-8 items-center justify-center rounded-full px-4 font-sans text-white transition-all duration-300 hover:scale-105"
           >
             <span className="relative z-10">Get Started</span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
@@ -97,7 +95,7 @@ export default function Header() {
                   <li key={item.href}>
                       <a
                         href={item.href}
-                        className="block text-base font-medium text-gray-300 hover:text-white transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-white/10"
+                        className="font-sans block text-base font-medium text-gray-300 hover:text-white transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-white/10"
                         onClick={closeAllDropdowns}
                       >
                         {item.label}
@@ -111,7 +109,7 @@ export default function Header() {
                 </div>
                 <Link
                   href="/get-started"
-                  className="relative block w-full rounded-full px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
+                  className="relative block w-full rounded-full px-4 py-3 text-center font-sans font-semibold text-white transition-all duration-300 hover:scale-105"
                   onClick={closeAllDropdowns}
                 >
                   <span className="relative z-10">Get Started</span>

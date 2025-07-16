@@ -19,13 +19,12 @@ export default function HeroSection({ scrollY }: { scrollY: number }) {
         />
         
         <div className="relative z-10 text-center px-4 md:px-6 max-w-6xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight text-shadow">
+          <h1 className="font-header text-white leading-tight text-shadow">
             <span className="moving-gradient block mb-2 md:mb-4">AI-Powered</span>
             Procurement
           </h1>
-          <p className="mt-4 md:mt-8 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="font-subtitle mt-4 md:mt-8 text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
           Advancing global logistics through open research, data-centric models, and collaborative AI innovation
-            
           </p>
           <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
           </div>
