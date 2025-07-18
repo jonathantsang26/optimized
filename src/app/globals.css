@@ -1,5 +1,37 @@
+@import url("https://unpkg.com/@geist-ui/fonts/geist-sans.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
 @import "keen-slider/keen-slider.css";
+
+/* ───── Font imports ───────────────────────────────────────────── */
+
+
+/* ───── Base font families ─────────────────────────────────────── */
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: "Geist Sans", 'Inter', sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Apply defaults */
+body       { font-family: var(--font-sans); }
+code, pre  { font-family: var(--font-mono); }
+
+/* Heading utility (use on h1‑h6 or short UI labels) */
+.font-display { font-family: var(--font-display); }
+
+/* ───── Type‑scale utilities ───────────────────────────────────── */
+.text-d1 { font-size: 3.75rem; line-height: 1.1;  letter-spacing: -0.02em; } /* 60 px */
+.text-h1 { font-size: 3rem;   line-height: 1.15; letter-spacing: -0.02em; } /* 48 px */
+.text-h2 { font-size: 2rem; line-height: 1.2;  letter-spacing: -0.015em; }
+.text-h3 { font-size: 1.92rem;line-height: 1.25; letter-spacing: -0.01em; }
+.text-base { font-size: 1.1rem; line-height: 1.45; }                     /* 16 px */              /* 12 px */
+.text-s1 { font-size: .8rem; line-height: 1.45; }
+
+/* Optional weight helpers */
+.font-semibold { font-weight: 600; }
+.font-bold     { font-weight: 800; }
 
 /* ────────────────────────────────
    Custom global styles extracted
@@ -62,6 +94,17 @@ html, body {
 .stagger-1 { transition-delay: .1s; }
 .stagger-2 { transition-delay: .2s; }
 .stagger-3 { transition-delay: .3s; }
+
+/* ───  Header inverse colors ───────────────── */
+/* Dark backgrounds - use white text */
+.bg-black, .bg-gray-900, .bg-gray-800, .bg-gray-700 {
+  --header-text-color: #ffffff;
+}
+
+/* Light backgrounds - use dark text */
+.bg-white, .bg-gray-100, .bg-gray-50, .bg-transparent {
+  --header-text-color: #000000;
+}
 
 /* ───  UI chrome  ───────────────── */
 .announcement-bar {

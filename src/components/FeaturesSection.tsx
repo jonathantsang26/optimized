@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
-import { useKeenSlider } from 'keen-slider/react'
+import { useKeenSlider, KeenSliderInstance } from 'keen-slider/react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { KeenSliderPlugin } from 'keen-slider/react'
 import Image from 'next/image'
@@ -97,20 +97,23 @@ interface Feature {
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
     const [ref, slider] = useKeenSlider<HTMLDivElement>({
       loop: true,
-      mode: 'snap', // changed from 'free-snap' to 'snap'
+      mode: 'snap',
       slides: {
         origin: 'center',
-        perView: 1.25,
+        perView: 1.3,
         spacing: 32,
       },
-      slideChanged: (s) => setCurrent(s.track.details.rel),
+      slideChanged: (s: KeenSliderInstance) => setCurrent(s.track.details.rel),
       created: (s) => {
         s.container.style.height = '70vh'
       },
+      // Key changes for seamless looping
+      renderMode: 'performance',
+      drag: true,
       breakpoints: {
         '(max-width: 768px)': {
           slides: {
-            perView: 1,
+            perView: 3,
             spacing: 16,
           },
         },
@@ -159,110 +162,120 @@ interface Feature {
 
   
     return (
-      <section id="features" className="relative pt-32 pb-32 overflow-hidden bg-[#f9fafb] bg-light">
-        <div className="max-w mx-auto px-4 mb-16">
+      <><section id="features" className="relative pt-32 pb-0 overflow-hidden bg-[#f9fafb] bg-light">
+        <div className="max-w mx-auto px-16 mb-16">
           <div className="highlighted-features bordered has-heading mb-12">
-            <div className="heading mb-8 text-left md:text-left text-center" style={{ marginLeft: '0', marginRight: '0' }}>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Research Foci</h3>
+            <div className="heading mb-8 text-left md:text-left ml-4 md:ml-10" style={{ marginLeft: '0', marginRight: '0' }}>
+              <h3 className="text-d1 text-gray-900">Research Foci</h3>
             </div>
-            <div className="overflow-x-auto">
-              <div className="flex justify-center md:justify-start" style={{ marginLeft: '0', marginRight: '0' }}>
-                <ul className="flex space-x-2 md:space-x-4 min-w-max px-2 md:px-4">
-                  {FEATURES.map((feature, index) => (
-                    <li key={feature.label} className="flex-shrink-0">
-                      <button
-                        onClick={() => {
-                          slider.current?.moveToIdx(index)
-                          resetAutoScroll()
-                        }}
-                        className={`icon-icon item flex flex-col items-center p-2 md:p-4 rounded-lg transition-all duration-300 border-2 w-24 md:w-36 ${
-                          index === current
-                            ? 'border-blue-600 bg-blue-50 text-blue-600'
-                            : 'border-gray-200 bg-white text-gray-600 hover:border-blue-400 hover:text-blue-600'
-                        }`}
-                      >
-                        <div className="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 flex items-center justify-center">
-                          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon">
-                            <path 
-                              d="M20 6.20312L20 33.7939M20 6.20312L12 14.2031M20 6.20312L28 14.2031" 
-                              stroke="currentColor" 
-                              strokeWidth="2.29" 
-                              strokeLinecap="round" 
-                              strokeLinejoin="round"
-                            />
-                            <path 
-                              d="M8 20.2031H32M8 26.2031H32" 
-                              stroke="currentColor" 
-                              strokeWidth="2.29" 
-                              strokeLinecap="round" 
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <p className="copy text-xs font-medium text-center leading-tight px-1">{feature.label}</p>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          </div>
+          <div className="overflow-x-auto">
+            <div className="flex justify-center md:justify-start" style={{ marginLeft: '0', marginRight: '0' }}>
+              <ul className="flex flex-wrap items-start space-x-2 md:space-x-4 min-w-max px-2 md:px-4">
+                {FEATURES.map((feature, index) => (
+                  <li key={feature.label} className="flex-shrink-0 min-w-[4rem] max-w-[12rem]">
+                    <button
+                      onClick={() => {
+                        slider.current?.moveToIdx(index)
+                        resetAutoScroll()
+                      } }
+                      className={`icon-icon item flex flex-col items-center p-2 md:p-4 rounded-lg transition-all duration-300 border-2 w-auto ${index === current
+                          ? 'border-blue-600 bg-blue-50 text-blue-600'
+                          : 'border-gray-200 bg-white text-gray-600 hover:border-blue-400 hover:text-blue-600'}`}
+                    >
+                      <div className="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 flex items-center justify-center">
+                        <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon">
+                          <path
+                            d="M20 6.20312L20 33.7939M20 6.20312L12 14.2031M20 6.20312L28 14.2031"
+                            stroke="currentColor"
+                            strokeWidth="2.29"
+                            strokeLinecap="round"
+                            strokeLinejoin="round" />
+                          <path
+                            d="M8 20.2031H32M8 26.2031H32"
+                            stroke="currentColor"
+                            strokeWidth="2.29"
+                            strokeLinecap="round"
+                            strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <p className="text-center leading-tight px-1 break-words whitespace-normal text-sm line-clamp-2 flex flex-col justify-center h-[2.4em]">{feature.label}</p>
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-  
-        <div
-          ref={ref}
-          className="keen-slider h-[50vh] md:h-[70vh] px-4"
-          onMouseEnter={pauseAutoScroll}
-          onMouseLeave={resetAutoScroll}
-        >
-          {FEATURES.map((feature) => (
-            <a
-              key={feature.label}
-              className="keen-slider__slide group relative h-full rounded-3xl overflow-hidden transition-all duration-300 border border-gray-200 shadow-md"
-              style={{
-                transform: 'scale(var(--scale, 1))',
-                opacity: 'var(--opacity, 1)',
-                transition: 'transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.6s cubic-bezier(0.4,0,0.2,1)',
-              }}
-            >
-              <Image 
-                src={feature.img} 
-                alt={feature.title} 
-                fill
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-10 bg-gradient-to-t from-black/50 to-transparent transition-transform duration-300">
-                <p className="text-white text-xs md:text-sm font-medium mb-1 md:mb-2 uppercase tracking-wider drop-shadow-sm">
-                  {feature.tag}
-                </p>
-                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-sm">
-                  {feature.title}
-                </h3>
-              </div>
-            </a>
-          ))}
+      </section><div className="relative">
+          {/* Background overlay to hide slides during loop transition */}
+          <div
+            className="absolute inset-0 pointer-events-none z-10"
+            style={{
+              background: 'linear-gradient(90deg, #f9fafb 0%, transparent 15%, transparent 85%, #f9fafb 100%)',
+            }} />
+
+          <div
+            ref={ref}
+            className="keen-slider h-[50vh] md:h-[70vh] px-4"
+            onMouseEnter={pauseAutoScroll}
+            onMouseLeave={resetAutoScroll}
+            style={{
+              // Ensure smooth transitions and hide overflow during loop
+              overflow: 'hidden',
+              willChange: 'transform',
+            }}
+          >
+            {FEATURES.map((feature) => (
+              <a
+                key={feature.label}
+                className="keen-slider__slide group relative h-full rounded-3xl overflow-hidden transition-all duration-300 border border-gray-200 shadow-md"
+                style={{
+                  transform: 'scale(var(--scale, 1))',
+                  opacity: 'var(--opacity, 1)',
+                  transition: 'transform 0.4s cubic-bezier(.17,.98,1,.99), opacity 0.6s cubic-bezier(.17,.98,1,.99)',
+                  // Ensure slides are properly positioned during transitions
+                  willChange: 'transform, opacity',
+                }}
+              >
+                <Image
+                  src={feature.img}
+                  alt={feature.title}
+                  fill
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-10 bg-gradient-to-t from-black/50 to-transparent transition-transform duration-300">
+                  <p className="text-base text-white mb-1 md:mb-2 uppercase tracking-wider drop-shadow-sm">
+                    {feature.tag}
+                  </p>
+                  <h3 className="text-d1 text-white leading-tight drop-shadow-sm">
+                    {feature.title}
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <button
+            onClick={() => {
+              slider.current?.prev()
+              resetAutoScroll()
+            } }
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={20} className="md:w-6 md:h-6" />
+          </button>
+          <button
+            onClick={() => {
+              slider.current?.next()
+              resetAutoScroll()
+            } }
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={20} className="md:w-6 md:h-6" />
+          </button>
         </div>
-  
-        <button
-          onClick={() => {
-            slider.current?.prev()
-            resetAutoScroll()
-          }}
-          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-100 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={20} className="md:w-6 md:h-6" />
-        </button>
-        <button
-          onClick={() => {
-            slider.current?.next()
-            resetAutoScroll()
-          }}
-          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-100 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
-          aria-label="Next slide"
-        >
-          <ChevronRight size={20} className="md:w-6 md:h-6" />
-        </button>
-      </section>
+      </>
     )
   }

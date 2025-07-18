@@ -75,16 +75,16 @@ export default function HowItWorksSection() {
       id="explain"
       className="relative w-full bg-[#f9fafb] px-4 md:px-12 lg:px-24 py-16 md:py-32"
     >
-      <div className="mx-auto max-w-7xl gap-y-12 md:gap-y-16 lg:flex lg:gap-x-20">
+      <div className="mx-auto max-w-7xl gap-y-12 md:gap-y-16 xl:flex xl:gap-x-20">
         {/* ------------------------------------------------------------------
             LEFT (sticky) – headline & paragraph
         ------------------------------------------------------------------ */}
-        <div className="lg:w-[36rem] lg:pr-0">
-          <div className="lg:sticky lg:top-20 md:top-150 space-y-6 md:space-y-10 lg:max-w-md text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 text-left">
+        <div className="xl:w-[36rem] xl:pr-0">
+          <div className="xl:sticky xl:top-45 md:top-160 space-y-6 md:space-y-10 xl:max-w-md text-left">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold text-gray-900 text-left">
               Procurement Automation
             </h2>
-            <p className="text-base md:text-lg lg:text-xl leading-relaxed text-gray-600 text-left">
+            <p className="text-base md:text-lg xl:text-xl leading-relaxed text-gray-600 text-left">
               Optimized integrates with your existing systems and uses AI trained
               on supply‑chain workflows to automate everything
               from proactively checking orders to running an entire RFQ process
@@ -96,7 +96,7 @@ export default function HowItWorksSection() {
         {/* ------------------------------------------------------------------
             RIGHT – scrolling cards
         ------------------------------------------------------------------ */}
-        <div className="flex flex-col gap-8 md:gap-16 min-w-0 flex-1 mt-8 lg:mt-0">
+        <div className="flex flex-col gap-8 md:gap-16 min-w-0 flex-1 mt-8 xl:mt-0">
           {STEPS.map((step, idx) => (
             <article
               key={step.id}

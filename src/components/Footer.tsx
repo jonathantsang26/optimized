@@ -26,17 +26,17 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>
               <a href="#features" className="transition-colors hover:text-blue-400">
-                Features
+                Research&nbsp;Foci
               </a>
             </li>
             <li>
               <a href="#how-it-works" className="transition-colors hover:text-blue-400">
-                How&nbsp;It&nbsp;Works
+                Features
               </a>
             </li>
             <li>
               <a href="/get-started" className="transition-colors hover:text-blue-400">
-                Schedule&nbsp;Demo
+                Applications
               </a>
             </li>
           </ul>
@@ -47,7 +47,7 @@ export default function Footer() {
           <h4 className="mb-4 text-lg font-semibold">Company</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#about" className="transition-colors hover:text-blue-400">
+              <a href="/about" className="transition-colors hover:text-blue-400">
                 About
               </a>
             </li>

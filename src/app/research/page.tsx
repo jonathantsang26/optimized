@@ -34,7 +34,7 @@ const launchpadBlocks = {
     },
     {
       title: 'OptiMUS‑0.3 ICML 2024 @ Austria ',
-      body: 'First LLM system to beat hand‑tuned heuristics in open competition.',
+      body: 'Developed a new method to generate MILP models from natural language specifications.',
       href: 'https://icml.cc/media/PosterPDFs/ICML%202024/33771.png?t=1721427021.3340716',
       ear: 'ICML, July 2024'
     }
@@ -112,7 +112,7 @@ export default function OptiMUSWarpStylePage() {
 
       {/* NAV BAR */}
       <header className="fixed w-full top-0 z-40 flex items-center justify-between px-6 py-3 backdrop-blur-md bg-[#16181A]/70">
-        <a href="#hero" className="text-xl font-semibold tracking-tight">OptiMUS</a>
+        <a href="#hero" className="text-xl font-semibold tracking-tight"></a>
         <button aria-label="toggle menu" onClick={() => setOpen(!open)} className="p-2 rounded hover:bg-white/10">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>

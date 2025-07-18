@@ -84,7 +84,7 @@ export default function TestimonialsWithCTASection() {
         <div
           ref={wrapRef}
           className="carousel-track flex"
-          style={{ '--rotation-duration': '20s' } as React.CSSProperties}
+          style={{ '--rotation-duration': '10s' } as React.CSSProperties}
         >
           {duplicatedTestimonials.map((testimonial, index) => (
             <div key={index} className="carousel-card group">

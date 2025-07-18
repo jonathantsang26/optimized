@@ -19,13 +19,12 @@ export default function HeroSection({ scrollY }: { scrollY: number }) {
         />
         
         <div className="relative z-10 text-center px-4 md:px-6 max-w-6xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight text-shadow">
+          <h1 className="text-d1 font-bold font-display text-white leading-tight text-shadow mix-blend-difference">
             <span className="moving-gradient block mb-2 md:mb-4">AI-Powered</span>
             Procurement
           </h1>
-          <p className="mt-4 md:mt-8 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-h3 font-display mt-4 md:mt-8 text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
           Advancing global logistics through open research, data-centric models, and collaborative AI innovation
-            
           </p>
           <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
           </div>
@@ -36,7 +35,7 @@ export default function HeroSection({ scrollY }: { scrollY: number }) {
           <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white opacity-90 drop-shadow-lg md:w-8 md:h-8">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
           </svg>
-          <span className="mt-1 md:mt-2 text-white text-xs md:text-sm opacity-90 tracking-wide drop-shadow">Scroll Down</span>
+          <span className="text-xs mt-1 md:mt-2 text-white opacity-90 tracking-wide drop-shadow">Scroll Down</span>
         </div>
       </section>
     )
