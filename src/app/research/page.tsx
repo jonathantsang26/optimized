@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import ResearchAbstract from '@/components/research/ResearchAbstract';
 import ResearchDataset from '@/components/research/ResearchDataset';
 import ResearchPipeline from '@/components/research/ResearchPipeline';
@@ -113,7 +114,7 @@ export default function OptiMUSWarpStylePage() {
       {/* NAV BAR */}
       <header className="fixed w-full top-0 z-40 flex items-center justify-between px-6 py-3 backdrop-blur-md bg-[#16181A]/70">
         <div className="flex items-center gap-6">
-          <a href="/" className="text-xl font-semibold tracking-tight hover:text-blue-400 transition-colors">← Home</a>
+          <Link href="/" className="text-xl font-semibold tracking-tight hover:text-blue-400 transition-colors">← Home</Link>
           <a href="#hero" className="text-xl font-semibold tracking-tight"></a>
         </div>
         <button aria-label="toggle menu" onClick={() => setOpen(!open)} className="p-2 rounded hover:bg-white/10">

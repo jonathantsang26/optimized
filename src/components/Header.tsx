@@ -73,7 +73,7 @@ export default function Header() {
                 &times;
               </button>
               <ul className="flex flex-col gap-10 items-center w-full mt-32">
-                {NAV_ITEMS.map((item, idx) => (
+                {NAV_ITEMS.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="block text-white text-2xl font-semibold hover:text-blue-400 transition-colors duration-200" onClick={() => setMenuOpen(false)}>
                       {item.label}

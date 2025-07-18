@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const ROLES = [
   {
@@ -94,9 +96,9 @@ export default function HiringPage() {
         <section className="flex-1 flex flex-col items-center md:items-start">
           <div className="w-full text-center md:text-left flex flex-col justify-center items-center md:items-start">
             <div className="mb-6 w-full">
-              <a href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
+              <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
                 ← Back to Home
-              </a>
+              </Link>
             </div>
             <h1 className="text-h1 md:text-d1 font-display font-bold mb-6">Join Us</h1>
             <p className="text-h3 md:text-h2 text-gray-700 mb-8">
@@ -177,11 +179,13 @@ export default function HiringPage() {
             `}</style>
             {ALL_LOGOS.map((src, i) => (
               <div key={i} className="keen-slider__slide flex items-center justify-center h-24 md:h-28">
-                <img
+                <Image
                   src={src}
                   alt="Expertise logo"
+                  width={160}
+                  height={96}
                   className="h-20 md:h-24 max-w-[8rem] md:max-w-[10rem] w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
-                  loading="eager"
+                  priority={i < 4}
                 />
               </div>
             ))}

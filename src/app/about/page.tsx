@@ -3,6 +3,7 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import GlobalStyles from '@/components/GlobalStyles'
+import Link from 'next/link'
 
 export default function AboutPage() {
   return (
@@ -13,9 +14,9 @@ export default function AboutPage() {
         <section className="max-w-5xl mx-auto px-4 md:px-8 py-20 md:py-28">
           <div className="bg-white/80 rounded-2xl shadow-xl border border-gray-200 p-8 md:p-16">
             <div className="mb-8">
-              <a href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
+              <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
                 ← Back to Home
-              </a>
+              </Link>
             </div>
             <h1 className="text-h1 md:text-d1 font-display font-bold mb-6 text-blue-700 text-center">About Optimized AI</h1>
             <p className="text-h3 md:text-h2 text-gray-700 mb-10 text-center">
