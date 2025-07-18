@@ -157,7 +157,19 @@ export default function HiringPage() {
           <h2 className="text-h3 font-semibold mb-4 text-left w-full pl-2 md:pl-4">
             Expertise from
           </h2>
-          <div ref={sliderRef} className="keen-slider h-96 md:h-[54rem] w-56 md:w-64 bg-white rounded-2xl shadow border border-gray-200 overflow-hidden">
+          <div ref={sliderRef} className="keen-slider hiring-carousel h-96 md:h-[54rem] w-56 md:w-64 bg-white rounded-2xl shadow border border-gray-200 overflow-hidden">
+            <style jsx>{`
+              .hiring-carousel,
+              .hiring-carousel .keen-slider__slide {
+                transition-timing-function: cubic-bezier(.17,.98,1,.99) !important;
+                transition-duration: 0.3s !important;
+              }
+              @media (max-width: 768px) {
+                .hiring-carousel .keen-slider__slide img {
+                  filter: none !important;
+                }
+              }
+            `}</style>
             {ALL_LOGOS.map((src, i) => (
               <div key={i} className="keen-slider__slide flex items-center justify-center h-24 md:h-28">
                 <img

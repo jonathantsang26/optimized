@@ -1,4 +1,3 @@
-// OptiMUS About Page
 'use client'
 
 import Footer from '@/components/Footer'
@@ -10,49 +9,39 @@ export default function AboutPage() {
     <>
       <GlobalStyles />
       <Header />
-      <main className="min-h-screen bg-gradient-to-br pt-24 from-blue-950 via-black to-purple-950 text-white font-sans">
-        <section className="max-w-4xl mx-auto px-6 py-24 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">About Optimized AI</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Advancing global logistics and procurement through open research, data-centric models, and collaborative AI innovation.
-          </p>
-          <div className="text-md text-gray-400 mb-10 max-w-2xl mx-auto">
-            <p className="mb-4">
-              <span className="font-semibold text-blue-400">Optimized AI</span> is dedicated to transforming procurement and supply chain operations with cutting-edge artificial intelligence. Our mission is to turn natural-language specifications into provably correct, production-ready optimization models, enabling organizations to make smarter, faster, and more reliable decisions.
+      <main className="min-h-screen bg-white text-gray-900 font-sans pt-24">
+        <section className="max-w-5xl mx-auto px-4 md:px-8 py-20 md:py-28">
+          <div className="bg-white/80 rounded-2xl shadow-xl border border-gray-200 p-8 md:p-16">
+            <h1 className="text-h1 md:text-d1 font-display font-bold mb-6 text-blue-700 text-center">About Optimized AI</h1>
+            <p className="text-h3 md:text-h2 text-gray-700 mb-10 text-center">
+              AI tooling for faster, smarter procurement decisions.
             </p>
-            <p className="mb-4">
-              We combine the latest advances in large language models (LLMs), machine learning, and operations research to automate and enhance every stage of the procurement process—from data harmonization and attribute enrichment to risk analytics and multi-objective decision optimization.
-            </p>
-            <p className="mb-4">
-              Our research-driven approach is trusted by leading organizations in aerospace, automotive, logistics, and beyond. We believe in open science, transparent benchmarks, and building tools that empower both technical and business teams.
-            </p>
-            <p>
-              <span className="font-semibold text-blue-400">No cookies, no tracking, just science.</span> We are committed to privacy, transparency, and delivering real-world impact through AI.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 mt-12 text-left">
-            <div>
-              <h2 className="text-2xl font-semibold mb-2 text-blue-300">What We Do</h2>
-              <ul className="list-disc pl-6 space-y-2 text-gray-200">
-                <li>Automated data harmonization & canonicalization</li>
-                <li>Attribute enrichment via hybrid ML/LLM pipelines</li>
-                <li>Transformer-based commodity classification</li>
-                <li>AI-driven sourcing & quotation workflows</li>
-                <li>Multi-objective bid scoring & decision optimization</li>
-                <li>Predictive risk and obsolescence analytics</li>
-                <li>Human-in-the-loop continuous learning</li>
-                <li>End-to-end procurement telemetry</li>
-              </ul>
+            <div className="grid md:grid-cols-2 gap-12 text-left mb-12">
+              <div>
+                <h2 className="text-h2 font-display font-semibold mb-3 text-blue-700">Mission</h2>
+                <p className="text-base leading-relaxed text-gray-700">
+                  Turn natural‑language specs into provably correct optimization models, giving teams a repeatable edge in cost, speed, and resilience.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-h2 font-display font-semibold mb-3 text-blue-700">Culture</h2>
+                <p className="text-base leading-relaxed text-gray-700">
+                  Open research, zero tracking, and relentless focus on real‑world impact. We publish benchmarks, share code, and measure ourselves by customer results.
+                </p>
+              </div>
             </div>
-            <div>
-              <h2 className="text-2xl font-semibold mb-2 text-blue-300">Our Values</h2>
-              <ul className="list-disc pl-6 space-y-2 text-gray-200">
-                <li>Open research and transparent benchmarks</li>
-                <li>Collaboration with industry and academia</li>
-                <li>Privacy-first, user-centric design</li>
-                <li>Real-world impact and measurable results</li>
-                <li>Continuous innovation and learning</li>
-              </ul>
+            <div className="grid md:grid-cols-2 gap-12 mb-12">
+              <div>
+                <h2 className="text-h2 font-display font-semibold mb-4 text-blue-700">Capabilities</h2>
+                <ul className="list-disc pl-5 space-y-1 text-base text-gray-700">
+                  <li>Data harmonization & canonicalization</li>
+                  <li>LLM‑driven attribute enrichment</li>
+                  <li>Commodity classification</li>
+                  <li>AI‑powered sourcing workflows</li>
+                  <li>Bid scoring & decision optimization</li>
+                  <li>Predictive risk analytics</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -60,4 +49,4 @@ export default function AboutPage() {
       <Footer />
     </>
   )
-} 
+}

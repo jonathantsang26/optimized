@@ -4,9 +4,6 @@
 @import "tailwindcss";
 @import "keen-slider/keen-slider.css";
 
-/* ───── Font imports ───────────────────────────────────────────── */
-
-
 /* ───── Base font families ─────────────────────────────────────── */
 :root {
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -237,4 +234,10 @@ html, body {
 /* Responsive secondary clamp */
 @media(max-width:768px){
   .carousel-card{width:80vw;max-width:80vw;margin-right:1rem;}
+}
+
+/* Custom easing only for HiringPage vertical carousel */
+.hiring-carousel,
+.hiring-carousel .keen-slider__slide {
+  transition-timing-function: cubic-bezier(.17,.98,1,.99) !important;
 }

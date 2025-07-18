@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useIsMobile } from './useIsMobile'
 
 interface TestimonialCard {
   org: string
@@ -51,6 +52,7 @@ const TESTIMONIALS: TestimonialCard[] = [
 export default function TestimonialsWithCTASection() {
   const wrapRef = useRef<HTMLDivElement>(null)
   const duplicatedTestimonials = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS]
+  const isMobile = useIsMobile(768)
 
   useEffect(() => {
     const wrap = wrapRef.current
@@ -114,9 +116,11 @@ export default function TestimonialsWithCTASection() {
             </div>
           </div>
           {/* Right: Large image */}
-          <div className="flex-1 flex justify-center h-full min-h-[20rem]">
-            <Image src="/aiDriven.jpg" alt="AI Driven" width={600} height={400} className="w-full h-full rounded-xl object-cover shadow-md" />
-          </div>
+          {!isMobile && (
+            <div className="flex-1 flex justify-center h-full min-h-[20rem]">
+              <Image src="/aiDriven.jpg" alt="AI Driven" width={600} height={400} className="w-full h-full rounded-xl object-cover shadow-md" />
+            </div>
+          )}
         </div>
       </div>
     </section>

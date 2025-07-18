@@ -14,12 +14,12 @@ export default function Page() {
       <GlobalStyles />
       <Header />
       <div className="bg-white">
-        <HeroSection scrollY={0} />
+        <HeroSection />
       </div>
       <div className="bg-[#f9fafb]">
         <FeaturesSection />
       </div>
-      <div className="bg-white">
+      <div className="bg-white">l
         <HowItWorksSection />
       </div>
       <div className="bg-white">
