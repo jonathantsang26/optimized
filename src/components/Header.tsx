@@ -72,9 +72,9 @@ export default function Header() {
               >
                 &times;
               </button>
-              <ul className="flex flex-col gap-10 items-center w-full mt-70 ">
+              <ul className="flex flex-col gap-10 items-center w-full mt-32">
                 {NAV_ITEMS.map((item, idx) => (
-                  <li key={item.href} className={idx === 0 ? 'mt-24' : ''}>
+                  <li key={item.href}>
                     <Link href={item.href} className="block text-white text-2xl font-semibold hover:text-blue-400 transition-colors duration-200" onClick={() => setMenuOpen(false)}>
                       {item.label}
                     </Link>

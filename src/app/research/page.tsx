@@ -112,7 +112,10 @@ export default function OptiMUSWarpStylePage() {
 
       {/* NAV BAR */}
       <header className="fixed w-full top-0 z-40 flex items-center justify-between px-6 py-3 backdrop-blur-md bg-[#16181A]/70">
-        <a href="#hero" className="text-xl font-semibold tracking-tight"></a>
+        <div className="flex items-center gap-6">
+          <a href="/" className="text-xl font-semibold tracking-tight hover:text-blue-400 transition-colors">← Home</a>
+          <a href="#hero" className="text-xl font-semibold tracking-tight"></a>
+        </div>
         <button aria-label="toggle menu" onClick={() => setOpen(!open)} className="p-2 rounded hover:bg-white/10">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>

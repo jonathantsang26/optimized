@@ -93,6 +93,11 @@ export default function HiringPage() {
         {/* Main Content + Open Roles */}
         <section className="flex-1 flex flex-col items-center md:items-start">
           <div className="w-full text-center md:text-left flex flex-col justify-center items-center md:items-start">
+            <div className="mb-6 w-full">
+              <a href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
+                ← Back to Home
+              </a>
+            </div>
             <h1 className="text-h1 md:text-d1 font-display font-bold mb-6">Join Us</h1>
             <p className="text-h3 md:text-h2 text-gray-700 mb-8">
               Help us build the future of AI-powered procurement.<br />
