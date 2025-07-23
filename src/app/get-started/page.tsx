@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 
-
-
 export default function GetStartedPage() {
   const [form, setForm] = useState({
     Name: '',
@@ -15,7 +13,7 @@ export default function GetStartedPage() {
   const [error, setError] = useState('')
 
   // Replace with your Google Apps Script endpoint
-  const SHEETS_ENDPOINT = 'https://script.google.com/a/macros/optimizedhq.com/s/AKfycbwvSxpuPPFG28yEHTUPI3epF-2dZzb4p-EQvYGJWRjE-nAdx_f0OgGlg9T_3kzcZ2iCJg/exec'
+  const SHEETS_ENDPOINT = '/api/file'
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })

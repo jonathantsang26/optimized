@@ -184,7 +184,7 @@ export default function HiringPage() {
                   alt="Expertise logo"
                   width={160}
                   height={96}
-                  className="h-20 md:h-24 max-w-[8rem] md:max-w-[10rem] w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                  className="h-20 md:h-24 max-w-[8rem] md:max-w-[10rem] w-auto object-contain hover:grayscale-0 transition duration-300"
                   priority={i < 4}
                 />
               </div>
