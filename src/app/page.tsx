@@ -1,5 +1,4 @@
 'use client'
-import GlobalStyles             from '@/components/GlobalStyles'
 import Header                   from '@/components/Header'
 import HeroSection              from '@/components/HeroSection'
 import FeaturesSection          from '@/components/FeaturesSection'
@@ -11,7 +10,6 @@ import TestimonialsWithCTASection from '@/components/TestimonialsWithCTASection'
 export default function Page() {
   return (
     <>
-      <GlobalStyles />
       <Header />
       <div className="bg-white">
         <HeroSection />

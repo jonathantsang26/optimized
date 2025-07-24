@@ -28,10 +28,10 @@ const navLinks = [
 const launchpadBlocks = {
   news: [
     {
-      title: 'Blog: Getting LLMs to model MILPs',
+      title: 'Paper: Getting LLMs to model MILPs',
       body: 'Deep‑dive into prompt engineering tricks that reduced hallucinations 28 %.',
-      href: '',
-      ear: 'Research Blog'
+      href: 'https://arxiv.org/pdf/2407.19633',
+      ear: 'Research Paper'
     },
     {
       title: 'OptiMUS‑0.3 ICML 2024 @ Austria ',
@@ -63,9 +63,9 @@ const launchpadBlocks = {
 
   impact: [
     {
-      title: 'Case Study // Logistics Startup',
-      body: '15 % route‑planning cost reduction after integrating OptiMUS‑API.',
-      href: 'https://optimus.blog/case-logistics',
+      title: 'Case Study // Direct Materials',
+      body: '$4.7 M consolidation upside by optimizing 380+ SKUs',
+      href: '/cases',
       ear: 'Field Report'
     }
   ],
@@ -107,15 +107,15 @@ export default function OptiMUSWarpStylePage() {
   const word = 'OptiMUS‑0.3'.split('')
 
   return (
-    <div className="min-h-screen font-sans bg-[#16181A] text-[#EFEFEF] selection:bg-blue-500/30">
+    <div className="min-h-screen font-sans text-[#EFEFEF] selection:bg-blue-500/30">
       {/* ── progress bar */}
       <span className="fixed top-0 left-0 h-1 bg-blue-500 z-50" style={{ width: `${progress}%` }} />
 
       {/* NAV BAR */}
       <header className="fixed w-full top-0 z-40 flex items-center justify-between px-6 py-3 backdrop-blur-md bg-[#16181A]/70">
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-xl font-semibold tracking-tight hover:text-blue-400 transition-colors">← Home</Link>
-          <a href="#hero" className="text-xl font-semibold tracking-tight"></a>
+          <Link href="/" className="text-base font-semibold tracking-tight hover:text-blue-400 transition-colors">← Home</Link>
+          <a href="" className="text-base font-bold tracking-tight">Optimized</a>
         </div>
         <button aria-label="toggle menu" onClick={() => setOpen(!open)} className="p-2 rounded hover:bg-white/10">
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -130,7 +130,7 @@ export default function OptiMUSWarpStylePage() {
         className="fixed inset-0 z-30 bg-[#0E0F11]/90 backdrop-blur-lg p-8 flex flex-col gap-6"
       >
         {navLinks.map(l => (
-          <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-3xl font-medium hover:text-blue-400 transition-colors flex items-center gap-2">
+          <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-h2x font-medium hover:text-blue-400 transition-colors flex items-center gap-2">
             {l.label} {l.external && <ExternalLink size={18} />}
           </a>
         ))}
@@ -139,12 +139,12 @@ export default function OptiMUSWarpStylePage() {
       {/* HERO */}
       <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="relative z-10 text-center">
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tight">
+          <h1 className="text-d1 font-bold leading-tight tracking-tight">
             {word.map((ch, i) => (
               <motion.span key={i} initial={{ y: 96, clipPath: 'inset(0% 0% 100% 0%)' }} animate={{ y: 0, clipPath: 'inset(0% 0% 0% 0%)' }} transition={{ delay: i * 0.05, duration: 0.6, ease: 'easeOut' }} className="inline-block">{ch}</motion.span>
             ))}
           </h1>
-          <p className="mt-4 text-xl md:text-2xl text-gray-300 max-w-xl mx-auto">Turning natural‑language specs into provably correct, production‑ready MILP models.</p>
+          <p className="mt-4 text-h4 text-gray-300 max-w-xl mx-auto">Turning natural‑language specs into provably correct, production‑ready MILP models.</p>
         </div>
         {/* Scroll Indicator */}
         <div className="absolute left-1/2 -translate-x-1/2 bottom-8 z-20 flex flex-col items-center animate-bounce select-none">
@@ -175,16 +175,15 @@ export default function OptiMUSWarpStylePage() {
             <section>
               <div className="flex items-end justify-between mb-4">
                 <h2 className="text-sm uppercase text-gray-400 tracking-wider">Latest News</h2>
-                <a href="https://optimus.blog" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-blue-400 flex items-center gap-1">Newsroom ↗</a>
               </div>
               <div className="grid md:grid-cols-2 gap-4">{launchpadBlocks.news.map(b => <Card key={b.href} {...b} />)}</div>
             </section>
             <section>
-              <div className="flex items-end justify-between mb-4"><h2 className="text-sm uppercase text-gray-400 tracking-wider">Artifacts</h2><a href="#dataset" className="text-sm hover:text-blue-400 flex items-center gap-1">View all ↘</a></div>
+              <div className="flex items-end justify-between mb-4"><h2 className="text-sm uppercase text-gray-400 tracking-wider">Artifacts</h2></div>
               <div className="grid md:grid-cols-3 gap-4">{launchpadBlocks.offerings.map(b => <Card key={b.href} {...b} />)}</div>
             </section>
             <section>
-              <div className="flex items-end justify-between mb-4"><h2 className="text-sm uppercase text-gray-400 tracking-wider">Latest Impact</h2><a href="https://optimus.blog#case-studies" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-blue-400 flex items-center gap-1">All studies ↗</a></div>
+              <div className="flex items-end justify-between mb-4"><h2 className="text-sm uppercase text-gray-400 tracking-wider">Case Studies</h2></div>
               <div className="grid md:grid-cols-2 gap-4">{launchpadBlocks.impact.map(b => <Card key={b.href} {...b} />)}</div>
             </section>
           </div>

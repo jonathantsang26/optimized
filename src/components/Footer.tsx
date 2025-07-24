@@ -25,18 +25,18 @@ export default function Footer() {
           <h4 className="mb-4 text-lg font-semibold">Research</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#features" className="transition-colors hover:text-blue-400">
-                Research&nbsp;Foci
+              <a href="/about" className="transition-colors hover:text-blue-400">
+                Purpose
               </a>
             </li>
             <li>
-              <a href="#how-it-works" className="transition-colors hover:text-blue-400">
+              <a href="/research" className="transition-colors hover:text-blue-400">
                 Features
               </a>
             </li>
             <li>
               <a href="/get-started" className="transition-colors hover:text-blue-400">
-                Applications
+                Implementation
               </a>
             </li>
           </ul>

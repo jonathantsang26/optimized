@@ -2,13 +2,12 @@
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import GlobalStyles from '@/components/GlobalStyles'
 import Link from 'next/link'
+import '@/app/globals.css'
 
 export default function AboutPage() {
   return (
     <>
-      <GlobalStyles />
       <Header />
       <main className="min-h-screen bg-white text-gray-900 font-sans pt-24">
         <section className="max-w-5xl mx-auto px-4 md:px-8 py-20 md:py-28">
