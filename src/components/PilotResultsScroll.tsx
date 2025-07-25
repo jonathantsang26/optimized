@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useIsMobile } from './useIsMobile';
 
 const pilotText = `We ran a 12-week pilot with a leading manufacturer. With our <br/> AI agents, our partner found<br/>
 <strong class="highlight-word">hidden volume discounts, </strong> <br/>
@@ -6,6 +7,7 @@ const pilotText = `We ran a 12-week pilot with a leading manufacturer. With our 
 <strong class="highlight-word"> and cut duped SKUs.</strong>`;
 
 export default function PilotResultsScroll() {
+  const isMobile = useIsMobile();
   const textRef = useRef<HTMLParagraphElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const stat1Ref = useRef<HTMLSpanElement>(null);
@@ -13,11 +15,13 @@ export default function PilotResultsScroll() {
   const stat3Ref = useRef<HTMLSpanElement>(null);
   const wordsRef = useRef<HTMLElement[]>([]);
   const highlightWordsRef = useRef<HTMLElement[]>([]);
-  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(!isMobile);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Helper to split text into word spans, preserving HTML tags
   useEffect(() => {
+    if (isMobile) return; // Skip word splitting for mobile
+
     const textElement = textRef.current;
     if (!textElement) return;
     const tempDiv = document.createElement('div');
@@ -83,11 +87,11 @@ export default function PilotResultsScroll() {
     // Save refs
     wordsRef.current = Array.from(textElement.querySelectorAll('.word'));
     highlightWordsRef.current = Array.from(textElement.querySelectorAll('.highlight-word'));
-  }, []);
+  }, [isMobile]);
 
   // Scroll handler
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || isMobile) return;
 
     const handleScroll = () => {
       const progress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
@@ -146,7 +150,35 @@ export default function PilotResultsScroll() {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) {
+    return (
+      <div className="py-16 px-4">
+        <section className="bg-black rounded-2xl p-6">
+          <div className="text-content justify-center">
+            <p className="text-2xl leading-relaxed mb-8">We ran a 12-week pilot with a leading manufacturer. 
+              With our AI agents, our partner <span className="highlight-word"> found hidden volume discounts</span>,
+               <span className="highlight-word"> reduced tail spend</span>, and <span className="highlight-word">cut duped SKUs</span>.</p>
+            <div className="grid grid-cols-1 gap-6">
+              <div className="stat-item text-center p-4 bg-[#2c2f33]/80 rounded-xl">
+                <span className="text-3xl font-bold block mb-2">380</span>
+                <div className="text-gray-400">SKUs Shifted</div>
+              </div>
+              <div className="stat-item text-center p-4 bg-[#2c2f33]/80 rounded-xl">
+                <span className="text-3xl font-bold block mb-2">1.8 Million</span>
+                <div className="text-gray-400">PO Lines Scanned</div>
+              </div>
+              <div className="stat-item text-center p-4 bg-[#2c2f33]/80 rounded-xl">
+                <span className="text-3xl font-bold block mb-2">$4.7 Million</span>
+                <div className="text-gray-400">Consolidation Upside</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="scroll-container" style={{ height: '150vh' }}>
