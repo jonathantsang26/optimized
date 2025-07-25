@@ -33,7 +33,7 @@ export default function TheSolutionPage() {
     {
       id: 4,
       title: "Auto-Action",
-      description: "For each identified issue or opportunity, agents generate automated workflows. This includes drafting supplier emails, creating SAP change requests, or initiating e-Auctions—all without requiring buyer intervention, enabling seamless value recovery."
+      description: "For each identified issue or opportunity, agents generate automated workflows. This includes drafting supplier emails, creating SAP change requests, or initiating e-Auctions&mdash;all without requiring buyer intervention, enabling seamless value recovery."
     }
   ];
 
@@ -99,7 +99,7 @@ export default function TheSolutionPage() {
           <main className="w-1/2 pt-20 pb-12 mx-auto bg-[#474747]" style={{ borderRadius: '0 40px 40px 0' }}>
             <div className="mx-auto">
               <h2 className="text-h2 font-semibold mb-8">Key Agent Teammates and Their Functions</h2>
-              <p className="text-base mb-8">Optimized's AI agents handle critical aspects of direct materials management through targeted automation:</p>
+              <p className="text-base mb-8">Optimized&apos;s AI agents handle critical aspects of direct materials management through targeted automation:</p>
 
               <div className="flex flex-col gap-10 pb-20">
                 {agents.map((agent) => (
