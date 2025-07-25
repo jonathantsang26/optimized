@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import '@/app/globals.css';
 import { motion } from 'framer-motion';
-import { Menu, X, Database, ShieldCheck, Search, Zap } from 'lucide-react';
+import { Database, ShieldCheck, Search, Zap } from 'lucide-react';
 import Link from 'next/link';
 import PilotResultsScroll from '@/components/PilotResultsScroll';
 import Footer from '@/components/Footer';
@@ -11,10 +11,9 @@ import { useIsMobile } from '@/components/useIsMobile';
 
 
 export default function TheSolutionPage() {
-  const [open, setOpen] = useState(false);
+  const isMobile = useIsMobile();
   const [currentAgent, setCurrentAgent] = useState(1);
   const word = '《Direct》'.split('');
-  const isMobile = useIsMobile();
 
   const agents = [
     {
@@ -56,9 +55,6 @@ export default function TheSolutionPage() {
           <Link href="/" className={`${isMobile ? 'text-sm' : 'text-base'} font-semibold tracking-tight hover:text-blue-400 transition-colors`}>← Home</Link>
           <a href="" className={`${isMobile ? 'text-sm' : 'text-base'} font-semibold tracking-tight`}>Optimized</a>
         </div>
-        <button aria-label="toggle menu" onClick={() => setOpen(!open)} className="p-2 rounded hover:bg-white/10">
-          {open ? <X size={isMobile ? 18 : 22} /> : <Menu size={isMobile ? 18 : 22} />}
-        </button>
       </header>
       
       <section className={`cs-hero min-h-screen flex items-center justify-center ${isMobile ? 'px-4' : 'px-20'}`}>
