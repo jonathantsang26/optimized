@@ -18,7 +18,7 @@ export default function AboutPage() {
               </Link>
             </div>
             <h1 className="text-h1 md:text-d1 font-display font-bold mb-6 text-blue-700 text-center">About Optimized AI</h1>
-            <p className="text-h3 md:text-h2 text-gray-700 mb-10 text-center">
+            <p className="text-h2 md:text-h2 text-gray-700 mb-10 text-center">
               AI tooling for faster, smarter procurement decisions.
             </p>
             <div className="grid md:grid-cols-2 gap-12 text-left mb-12">

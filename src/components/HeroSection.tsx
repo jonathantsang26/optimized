@@ -42,7 +42,7 @@ export default function HeroSection() {
           <span className="moving-gradient block mb-2 md:mb-4">AI-Powered</span>
           Procurement
         </h1>
-        <p className="text-h3 font-display mt-4 md:mt-8 text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
+        <p className="text-h2 font-display mt-4 md:mt-8 text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
         Advancing global logistics through open research, data-centric models, and AI insights
         </p>
         <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">

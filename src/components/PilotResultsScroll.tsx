@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-const pilotText = `We ran a 12-week pilot with a leading manufacturer. With our <br/> AI agents, our partners found<br/>
+const pilotText = `We ran a 12-week pilot with a leading manufacturer. With our <br/> AI agents, our partner found<br/>
 <strong class="highlight-word">hidden volume discounts, </strong> <br/>
 <strong class="highlight-word">reduced tail spend,</strong> <br/> 
 <strong class="highlight-word"> and cut duped SKUs.</strong>`;
@@ -13,6 +13,8 @@ export default function PilotResultsScroll() {
   const stat3Ref = useRef<HTMLSpanElement>(null);
   const wordsRef = useRef<HTMLElement[]>([]);
   const highlightWordsRef = useRef<HTMLElement[]>([]);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   // Helper to split text into word spans, preserving HTML tags
   useEffect(() => {
@@ -85,9 +87,20 @@ export default function PilotResultsScroll() {
 
   // Scroll handler
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleScroll = () => {
-      const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+      const progress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
+      setScrollProgress(clampedProgress);
+
+      // Hide scroll indicator when reaching the end
+      if (clampedProgress >= 0.95) {
+        setShowScrollIndicator(false);
+      } else {
+        setShowScrollIndicator(true);
+      }
+
       // Animate words
       const words = wordsRef.current;
       const wordsToShow = Math.floor(words.length * clampedProgress * 2.5);
@@ -98,9 +111,10 @@ export default function PilotResultsScroll() {
           word.classList.remove('visible');
         }
       });
+
       // Animate highlight words
       const highlights = highlightWordsRef.current;
-      const highlightProgress = Math.max(0, (clampedProgress - 0.2) / 0.3);
+      const highlightProgress = Math.max(0, (clampedProgress - 0.2) / 0.2);
       const highlightsToShow = Math.floor(highlights.length * highlightProgress);
       highlights.forEach((word, idx) => {
         if (idx < highlightsToShow) {
@@ -109,20 +123,22 @@ export default function PilotResultsScroll() {
           word.classList.remove('underline');
         }
       });
+
       // Animate stats
       const stats = statsRef.current;
       if (stats) {
-        if (clampedProgress > 0.6) {
+        if (clampedProgress > 0.45) {
           stats.classList.add('visible');
-          setTimeout(() => stat1Ref.current?.classList.add('animate'), 200);
-          setTimeout(() => stat2Ref.current?.classList.add('animate'), 400);
-          setTimeout(() => stat3Ref.current?.classList.add('animate'), 600);
+          setTimeout(() => stat1Ref.current?.classList.add('animate'), 100);
+          setTimeout(() => stat2Ref.current?.classList.add('animate'), 200);
+          setTimeout(() => stat3Ref.current?.classList.add('animate'), 300);
         } else {
           stats.classList.remove('visible');
           [stat1Ref, stat2Ref, stat3Ref].forEach(ref => ref.current?.classList.remove('animate'));
         }
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
     handleScroll();
@@ -133,22 +149,34 @@ export default function PilotResultsScroll() {
   }, []);
 
   return (
-    <div className="scroll-container" style={{ height: '200vh' }}>
-      <section className="pilot-section bg-black" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-        <div className="text-content" style={{ maxWidth: 835, padding: '0 2rem', position: 'relative', zIndex: 1 }}>
+    <div className="scroll-container" style={{ height: '150vh' }}>
+      <div className={`scroll-indicator fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2 duration-500 bg-black/20 backdrop-blur-sm p-2 rounded-sm ${!showScrollIndicator ? 'hidden' : ''}`}>
+        <div className="h-1 w-48 bg-gray-800 rounded-full overflow-hidden">
+          <div 
+            className="h-full bg-blue-500 transition-all duration-200 ease-out rounded-full"
+            style={{ 
+              width: `${Math.min(scrollProgress * 100, 100)}%`
+            }}
+          />
+        </div>
+        <span className="text-s1">Scroll to explore</span>
+      </div>
+
+      <section className="pilot-section bg-black">
+        <div className="text-content">
           <p className="pilot-text" ref={textRef} />
           <div className="stats-container" ref={statsRef}>
             <div className="stat-item">
-              <span className="stat-number" ref={stat1Ref}>12</span>
-              <div className="stat-label">Week Pilot</div>
+              <span className="stat-number" ref={stat1Ref}>380</span>
+              <div className="stat-label">SKUs Shifted</div>
             </div>
             <div className="stat-item">
-              <span className="stat-number" ref={stat2Ref}>3</span>
-              <div className="stat-label">Key Benefits</div>
+              <span className="stat-number" ref={stat2Ref}>1.8 Million</span>
+              <div className="stat-label">PO Lines Scanned</div>
             </div>
             <div className="stat-item">
-              <span className="stat-number" ref={stat3Ref}>100%</span>
-              <div className="stat-label">Success Rate</div>
+              <span className="stat-number" ref={stat3Ref}>$4.7 Million</span>
+              <div className="stat-label">Consolidation Upside</div>
             </div>
           </div>
         </div>

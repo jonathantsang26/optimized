@@ -14,7 +14,7 @@ export default function ResearchAbstract() {
         <div className="flex items-center justify-between flex-wrap gap-4 mb-2">
           <div>
             <h5 className="uppercase tracking-wider text-gray-400 mb-1 font-semibold">Research</h5>
-            <h2 className="text-[#EFEFEF] font-bold text-h3">Abstract</h2>
+            <h2 className="text-[#EFEFEF] font-bold text-h2">Abstract</h2>
           </div>
         </div>
         <div className="bg-[#202426] p-8 rounded-lg shadow-md space-y-6">

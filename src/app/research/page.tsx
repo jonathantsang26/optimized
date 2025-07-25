@@ -144,7 +144,7 @@ export default function OptiMUSWarpStylePage() {
               <motion.span key={i} initial={{ y: 96, clipPath: 'inset(0% 0% 100% 0%)' }} animate={{ y: 0, clipPath: 'inset(0% 0% 0% 0%)' }} transition={{ delay: i * 0.05, duration: 0.6, ease: 'easeOut' }} className="inline-block">{ch}</motion.span>
             ))}
           </h1>
-          <p className="mt-4 text-h4 text-gray-300 max-w-xl mx-auto">Turning natural‑language specs into provably correct, production‑ready MILP models.</p>
+          <p className="mt-4 text-h3 text-gray-300 max-w-xl mx-auto">Turning natural‑language specs into provably correct, production‑ready MILP models.</p>
         </div>
         {/* Scroll Indicator */}
         <div className="absolute left-1/2 -translate-x-1/2 bottom-8 z-20 flex flex-col items-center animate-bounce select-none">

@@ -101,7 +101,7 @@ export default function HiringPage() {
               </Link>
             </div>
             <h1 className="text-h1 md:text-d1 font-display font-bold mb-6">Join Us</h1>
-            <p className="text-h3 md:text-h2 text-gray-700 mb-8">
+            <p className="text-h2 md:text-h2 text-gray-700 mb-8">
               Help us build the future of AI-powered procurement.<br />
             </p>
             {/*<p className="text-h2 text-gray-500 mb-2">
@@ -161,7 +161,7 @@ export default function HiringPage() {
         </section>
         {/* Vertical Carousel */}
         <aside className="md:w-1/3 flex flex-col items-center md:items-start">
-          <h2 className="text-h3 font-semibold mb-4 text-left w-full pl-2 md:pl-4">
+          <h2 className="text-h2 font-semibold mb-4 text-left w-full pl-2 md:pl-4">
             Expertise from
           </h2>
           <div ref={sliderRef} className="keen-slider hiring-carousel h-96 md:h-[54rem] w-56 md:w-64 bg-white rounded-2xl shadow border border-gray-200 overflow-hidden">

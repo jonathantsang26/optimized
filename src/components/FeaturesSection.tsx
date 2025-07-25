@@ -250,7 +250,7 @@ interface Feature {
                     {feature.tag}
                   </p>
                   <h3
-                    className={`${isMobile ? 'text-h3' : 'text-d1'} text-white leading-tight drop-shadow-sm`}
+                    className={`${isMobile ? 'text-h2' : 'text-d1'} text-white leading-tight drop-shadow-sm`}
                   >
                     {feature.title}
                   </h3>
