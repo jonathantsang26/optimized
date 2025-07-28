@@ -197,11 +197,6 @@ export default function OptiMUSWarpStylePage() {
       <ResearchBenchmarks />
       <ResearchFutureWork />
 
-      {/* ── FOOTER */}
-      <footer className="py-12 text-center text-sm text-gray-500 bg-[#0E0F11]">
-        © 2025 OptiMUS Research. Built with React + Tailwind + Framer Motion. No cookies, no tracking, just science.
-      </footer>
-
       {/* ── GLOBAL STYLES */}
       <style jsx global>{`
         .inner { @apply max-w-4xl mx-auto; }
