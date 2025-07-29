@@ -34,17 +34,19 @@ export default function HeroSection() {
       
       <div className="absolute inset-0 bg-black/50" />
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60"
+        className="absolute inset-x-0 bottom-0 h-[45vh] bg-gradient-to-b from-transparent to-white/35"
       />
       
       <div className="relative z-10 text-center px-4 md:px-6 max-w-6xl mx-auto">
         <h1 className="text-d1 font-bold font-display text-white leading-tight text-shadow mix-blend-difference">
-          <span className="moving-gradient block mb-2 md:mb-4">AI-Powered</span>
+          <span className="moving-gradient block">AI-Powered</span>
           Procurement
         </h1>
-        <p className="text-h2 font-display mt-4 md:mt-8 text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
-        Advancing global logistics through open research, data-centric models, and AI insights
-        </p>
+        <ul className="list-none text-h2 font-display mt-4 md:mt-8 text-gray-200 max-w-4xl mx-auto leading-relaxed px-4">
+          <li>Keep production running.</li>
+          <li>Automate savings.</li>
+          <li>Unify data.</li>
+        </ul>
         <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
         </div>
       </div>

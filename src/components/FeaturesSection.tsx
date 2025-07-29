@@ -81,10 +81,8 @@ interface Feature {
         const center = details.abs + details.size / 2 - slider.track.details.position
         const distance = Math.abs(centerPoint - center)
         const scale = Math.max(0.8, 1 - (distance / slider.size) * 0.3)
-        const opacity = Math.max(0.3, 1 - (distance / slider.size) * 0.8)
-        // Set CSS variables for smooth transition
+        // Set CSS variables for smooth transition - removed opacity
         slide.style.setProperty('--scale', scale.toString())
-        slide.style.setProperty('--opacity', opacity.toString())
       })
     }
     
@@ -159,62 +157,18 @@ interface Feature {
 
   
     return (
-      <><section id="features" className="relative pt-32 pb-0 overflow-hidden bg-[#f9fafb] bg-light">
+      <><section id="features" className="relative overflow-hidden bg-black">
         <div className={`max-w mx-auto ${isMobile ? 'px-2' : 'px-16'}`}>
-          <div className="highlighted-features bordered has-heading mb-12">
+          <div className="highlighted-features bordered has-heading mb-12 pt-12">
             <div className={`heading mb-8 text-left md:text-left ml-4 md:ml-10`} style={{ marginLeft: '0', marginRight: '0' }}>
-              <h3 className="text-d1 text-gray-900">Research Foci</h3>
+              <h3 className="text-d1 text-white">Research Foci</h3>
             </div>
-          </div>
-          <div className="overflow-x-auto">
-            {!isMobile && (
-              <div className="flex justify-center md:justify-start mb-6" style={{ marginLeft: '0', marginRight: '0' }}>
-                <ul className="flex flex-wrap items-start space-x-2 md:space-x-4 min-w-max px-2 md:px-4">
-                  {FEATURES.map((feature, index) => (
-                    <li key={feature.label} className="flex-shrink-0 min-w-[4rem] max-w-[12rem]">
-                      <button
-                        onClick={() => {
-                          slider.current?.moveToIdx(index)
-                          resetAutoScroll()
-                        } }
-                        className={`icon-icon item flex flex-col items-center p-2 md:p-4 rounded-lg transition-all duration-300 border-2 w-auto ${index === current
-                            ? 'border-blue-600 bg-blue-50 text-blue-600'
-                            : 'border-gray-200 bg-white text-gray-600 hover:border-blue-400 hover:text-blue-600'}`}
-                      >
-                        <div className="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-3 flex items-center justify-center">
-                          <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon">
-                            <path
-                              d="M20 6.20312L20 33.7939M20 6.20312L12 14.2031M20 6.20312L28 14.2031"
-                              stroke="currentColor"
-                              strokeWidth="2.29"
-                              strokeLinecap="round"
-                              strokeLinejoin="round" />
-                            <path
-                              d="M8 20.2031H32M8 26.2031H32"
-                              stroke="currentColor"
-                              strokeWidth="2.29"
-                              strokeLinecap="round"
-                              strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <p className="text-center leading-tight px-1 break-words whitespace-normal text-sm line-clamp-2 flex flex-col justify-center h-[2.4em]">{feature.label}</p>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
         </div>
       </section><div className="relative">
           {/* Background overlay to hide slides during loop transition */}
           <div
-            className="absolute inset-0 pointer-events-none z-10"
-            style={{
-              background: isMobile
-                ? 'linear-gradient(90deg, #f9fafb 0%, transparent 5%, transparent 95%, #f9fafb 100%)'
-                : 'linear-gradient(90deg, #f9fafb 0%, transparent 15%, transparent 85%, #f9fafb 100%)',
-            }} />
+            className="absolute inset-0 pointer-events-none z-0 bg-black" />
 
           <div
             ref={ref}
@@ -231,13 +185,12 @@ interface Feature {
             {FEATURES.map((feature) => (
               <a
                 key={feature.label}
-                className="keen-slider__slide group relative h-full rounded-3xl overflow-hidden transition-all duration-300 border border-gray-200 shadow-md"
+                className="keen-slider__slide group relative h-full rounded-3xl overflow-hidden transition-all duration-300 shadow-md"
                 style={{
                   transform: 'scale(var(--scale, 1))',
-                  opacity: 'var(--opacity, 1)',
-                  transition: 'transform 0.4s cubic-bezier(.17,.98,1,.99), opacity 0.6s cubic-bezier(.17,.98,1,.99)',
+                  transition: 'transform 0.4s cubic-bezier(.17,.98,1,.99)',
                   // Ensure slides are properly positioned during transitions
-                  willChange: 'transform, opacity',
+                  willChange: 'transform',
                 }}
               >
                 <Image
@@ -267,7 +220,7 @@ interface Feature {
                   slider.current?.prev()
                   resetAutoScroll()
                 } }
-                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
+                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 rounded-full bg-[#202426] text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
                 aria-label="Previous slide"
               >
                 <ChevronLeft size={20} className="md:w-6 md:h-6" />
@@ -277,7 +230,7 @@ interface Feature {
                   slider.current?.next()
                   resetAutoScroll()
                 } }
-                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 rounded-full bg-black text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
+                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 rounded-full bg-[#202426] text-white border border-gray-300 p-2 md:p-4 hover:bg-gray-800 transition-colors shadow-lg"
                 aria-label="Next slide"
               >
                 <ChevronRight size={20} className="md:w-6 md:h-6" />

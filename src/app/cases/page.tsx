@@ -34,7 +34,7 @@ export default function TheSolutionPage() {
     {
       id: 4,
       title: "Auto-Action",
-      description: "For each identified issue or opportunity, agents generate automated workflows. This includes drafting supplier emails, creating SAP change requests, or initiating e-Auctions&mdash;all without requiring buyer intervention, enabling seamless value recovery."
+      description: "For each identified issue or opportunity, agents generate automated workflows. This includes drafting supplier emails, creating SAP change requests, or initiating e-Auctions — all without requiring buyer intervention."
     }
   ];
 
@@ -144,7 +144,7 @@ export default function TheSolutionPage() {
                   {agents.map((agent) => (
                     <div
                       key={agent.id}
-                      className={`transition-all duration-500 ${
+                      className={` duration-0 ${
                         currentAgent === agent.id
                           ? "opacity-100 translate-x-0"
                           : "opacity-0 translate-x-8 absolute top-0 left-0 right-0 pointer-events-none"
@@ -179,7 +179,7 @@ export default function TheSolutionPage() {
                         <Database size={32} />
                       </div>
                       <h3 className="timeline-title">Clean & Match</h3>
-                      <p className="timeline-description">Harmonizes data across BOMs, POs, and catalogs</p>
+                      <p className="timeline-description">Normalizes data across all sources</p>
                     </motion.div>
 
                     <motion.div 
@@ -205,7 +205,7 @@ export default function TheSolutionPage() {
                         <Search size={32} />
                       </div>
                       <h3 className="timeline-title">Opportunity Hunt</h3>
-                      <p className="timeline-description">Identifies consolidation and savings opportunities</p>
+                      <p className="timeline-description">Identifies consolidation and savings </p>
                     </motion.div>
 
                     <motion.div 
@@ -218,7 +218,7 @@ export default function TheSolutionPage() {
                         <Zap size={32} />
                       </div>
                       <h3 className="timeline-title">Auto-Action</h3>
-                      <p className="timeline-description">Automates workflows for value recovery</p>
+                      <p className="timeline-description">Automates workflows</p>
                     </motion.div>
                   </div>
                 </section>

@@ -25,13 +25,13 @@ export default function Footer() {
           <h4 className="mb-4 text-lg font-semibold">Research</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/about" className="transition-colors hover:text-blue-400">
-                Purpose
+              <a href="/research" className="transition-colors hover:text-blue-400">
+                OptiMUS-0.3
               </a>
             </li>
             <li>
-              <a href="/research" className="transition-colors hover:text-blue-400">
-                Features
+              <a href="/cases" className="transition-colors hover:text-blue-400">
+                Case Studies
               </a>
             </li>
             <li>
@@ -53,7 +53,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="/hiring" className="transition-colors hover:text-blue-400">
-                Careers
+                Team
               </a>
             </li>
             <li>

@@ -10,6 +10,8 @@ import ResearchDataset from '@/components/research/ResearchDataset';
 import ResearchPipeline from '@/components/research/ResearchPipeline';
 import ResearchBenchmarks from '@/components/research/ResearchBenchmarks';
 import ResearchFutureWork from '@/components/research/ResearchFutureWork';
+import FeaturesSection from '@/components/FeaturesSection';
+import Footer from '@/components/Footer';
 
 /* ────────────────────────────────────────────────────────────────────────────
   NAV METADATA
@@ -155,21 +157,11 @@ export default function OptiMUSWarpStylePage() {
         </div>
       </section>
 
-      {/* LAUNCHPAD */}
-      <section className="ptcom-launchpad bg-[#202426] px-6 min-h-screen flex flex-col justify-center relative">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[220px_1fr] gap-10">
-          {/* LEFT NAV */}
-          <article>
-            <h2 className="text-sm uppercase text-gray-400 mb-4 tracking-wider">Navigation</h2>
-            <ul className="space-y-2">
-              {navLinks.map(l => (
-                <li key={l.href}>
-                  <a href={l.href} className="hover:text-blue-400 flex items-center gap-1">{l.label} {l.external && <ExternalLink size={14} />}</a>
-                </li>
-              ))}
-            </ul>
-          </article>
+      <FeaturesSection />
 
+      {/* LAUNCHPAD */}
+      <section className="ptcom-launchpad bg-black px-6 min-h-[50vh] flex flex-col justify-center relative p-24">
+        <div className="max-w-6xl mx-auto">
           {/* RIGHT GRID */}
           <div className="space-y-16">
             <section>
@@ -190,18 +182,19 @@ export default function OptiMUSWarpStylePage() {
         </div>
       </section>
 
+
       {/* ── RESEARCH SECTIONS */}
       <ResearchAbstract />
       <ResearchDataset />
       <ResearchPipeline />
       <ResearchBenchmarks />
       <ResearchFutureWork />
-
+      <Footer />
       {/* ── GLOBAL STYLES */}
       <style jsx global>{`
         .inner { @apply max-w-4xl mx-auto; }
         .ptcom-design__headerSection__3mwz99 { @apply py-20 px-6; }
-        .ptcom-design__headerSectionWrap__3mwz99[data-background="dark"] { @apply bg-[#202426] text-gray-100; }
+        .ptcom-design__headerSectionWrap__3mwz99[data-background="dark"] { @apply bg-black text-gray-100; }
       `}</style>
     </div>
   )

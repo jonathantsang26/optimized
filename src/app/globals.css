@@ -21,7 +21,7 @@ code, pre  { font-family: var(--font-mono); }
 /* ───── Type‑scale utilities ───────────────────────────────────── */
 .text-d1 { font-size: 5rem; line-height: 1.1;  letter-spacing: -0.025em; } /* 60 px */
 .text-h1 { font-size: 3rem;   line-height: 1.15; letter-spacing: -0.02em; } /* 48 px */
-.text-h2 { font-size: 2rem; line-height: 1.2;  letter-spacing: -0.015em; }
+.text-h2 { font-size: 2rem; line-height: 1.3;  letter-spacing: -0.015em; }
 .text-h3 { font-size: 1.1rem;line-height: 1.25;}
 .text-base { font-size: 1.1rem; line-height: 1.45; } 
 .text-researchLarge { font-size: 3rem; line-height: 1.75; letter-spacing: -0.01em; }
