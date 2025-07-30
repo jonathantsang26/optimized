@@ -70,7 +70,7 @@ export default function GetStartedPage() {
                 <ArrowRight size={32} className="text-green-400" />
               </div>
               <h3 className="text-2xl font-semibold text-white">Thank You!</h3>
-              <p className="text-gray-300">Your submission has been received. We'll be in touch soon.</p>
+              <p className="text-gray-300">Your submission has been received. We&apos;ll be in touch soon.</p>
             </div>
           ) : (
             <form className="space-y-8" onSubmit={handleSubmit}>
