@@ -15,7 +15,7 @@ export default function ResearchBenchmarks() {
           <h5 className="uppercase tracking-wider text-gray-400 mb-2 font-semibold">Research</h5>
           <h2 className="text-[#EFEFEF] font-bold text-h2 mb-4 sm:mb-6">Benchmarks & Ablations</h2>
           <p className="text-gray-300 max-w-5xl leading-relaxed">
-            Our comprehensive evaluation demonstrates OptiMUS's effectiveness across diverse optimization scenarios. Through rigorous testing and ablation studies, we've quantified the impact of each system component on model accuracy and solution efficiency.
+            Our comprehensive evaluation demonstrates OptiMUS&apos;s effectiveness across diverse optimization scenarios. Through rigorous testing and ablation studies, we&apos;ve quantified the impact of each system component on model accuracy and solution efficiency.
           </p>
         </div>
 

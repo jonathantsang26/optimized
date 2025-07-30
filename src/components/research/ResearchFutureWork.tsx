@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Brain, Code2, Database, GitBranch, Microscope, ShieldCheck } from 'lucide-react';
+import { Brain, Code2, Database, ShieldCheck } from 'lucide-react';
 
 export default function ResearchFutureWork() {
   return (

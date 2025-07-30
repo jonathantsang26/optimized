@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">5. Your Privacy Rights</h2>
-        <p className="mb-2"><span className="font-medium">California Residents (CCPA/CPRA):</span> You have the right to know, delete, correct, opt‑out of "sale"/"sharing," and to be free from discrimination. Submit CCPA requests via email at <a href="mailto:contact@optimizedhq.com" className="text-blue-600 underline">contact@optimizedhq.com</a>.</p>
+        <p className="mb-2"><span className="font-medium">California Residents (CCPA/CPRA):</span> You have the right to know, delete, correct, opt‑out of &quot;sale&quot;/&quot;sharing,&quot; and to be free from discrimination. Submit CCPA requests via email at <a href="mailto:contact@optimizedhq.com" className="text-blue-600 underline">contact@optimizedhq.com</a>.</p>
         <p className="mb-2"><span className="font-medium">EEA & UK Residents (GDPR):</span> You have the rights of access, rectification, erasure, restriction, portability, and objection. You may also lodge a complaint with your local supervisory authority.</p>
         <p><span className="font-medium">Opt‑Out of Marketing:</span> Follow the unsubscribe instructions in any marketing email or adjust your preferences in your account settings.</p>
       </section>
@@ -129,7 +129,7 @@ export default function PrivacyPolicyPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">10. Children's Privacy</h2>
+        <h2 className="text-2xl font-semibold mb-2">10. Children&apos;s Privacy</h2>
         <p>
           The Services are not directed to children under 13. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected such data, we will delete it promptly.
         </p>
@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">11. Changes to This Privacy Policy</h2>
         <p>
-          We will post updates to this page and revise the "Effective Date" above. If changes are material, we will notify you via email or a prominent notice on the Site.
+          We will post updates to this page and revise the &quot;Effective Date&quot; above. If changes are material, we will notify you via email or a prominent notice on the Site.
         </p>
       </section>
 

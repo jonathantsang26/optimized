@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 
-import { useKeenSlider, KeenSliderInstance } from 'keen-slider/react'
+import { useKeenSlider } from 'keen-slider/react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { KeenSliderPlugin } from 'keen-slider/react'
 import Image from 'next/image'
@@ -92,7 +92,6 @@ interface Feature {
   }
   
   export default function Features() {
-    const [current, setCurrent] = useState(0)
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
     const isMobile = useIsMobile(768)
     const [ref, slider] = useKeenSlider<HTMLDivElement>({
@@ -101,7 +100,6 @@ interface Feature {
       slides: isMobile
         ? { origin: 'center', perView: 1, spacing: 8 }
         : { origin: 'center', perView: 1.3, spacing: 32 },
-      slideChanged: (s: KeenSliderInstance) => setCurrent(s.track.details.rel),
       created: (s) => {
         s.container.style.height = isMobile ? '38vh' : '70vh'
       },

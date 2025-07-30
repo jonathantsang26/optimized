@@ -5,6 +5,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Home, Briefcase, MapPin, Clock, ChevronDown, ChevronUp } from 'lucide-react'
 
 const ROLES = [
   {
@@ -90,123 +91,142 @@ export default function HiringPage() {
   }, [slider])
 
   return (
-    <main className="min-h-screen bg-white text-gray-900 font-sans">
-      <div className="flex flex-col md:flex-row max-w-7xl mx-auto pt-16 pb-16 gap-12 px-4 md:px-8">
-        {/* Main Content + Open Roles */}
-        <section className="flex-1 flex flex-col items-center md:items-start">
-          <div className="w-full text-center md:text-left flex flex-col justify-center items-center md:items-start">
-            <div className="mb-6 w-full">
-              <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
-                ← Back to Home
-              </Link>
-            </div>
-            <h1 className="text-h1 md:text-d1 font-display font-bold mb-6">Join Us</h1>
-            <p className="text-h2 md:text-h2 text-gray-700 mb-8">
-              Help us build the future of AI-powered procurement.<br />
-            </p>
-            {/*<p className="text-h2 text-gray-500 mb-2">
-              We value curiosity, velocity, and ownership. If you want to work on hard problems with real-world impact, we want to hear from you.
-            </p>*/}
-          </div>
-          {/* Open Roles Section (now inside the right column) */}
-          <section className="w-full max-w-2xl px-4 pb-24 pt-12">
-            <h2 className="text-h2 font-display font-semibold mb-8 text-center md:text-left">Open Roles</h2>
-            <div className="space-y-8">
-              {ROLES.map((role, idx) => (
-                <div
-                  key={role.title}
-                  className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg transition hover:border-blue-400"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                    <div>
-                      <h3 className="text-h2 font-display font-bold text-gray-900">{role.title}</h3>
-                      <div className="text-base text-gray-500 mt-1">
-                        {role.location} &middot; {role.type}
+    <main className="bg-white min-h-screen">
+      <div className="max-w-5xl mx-auto py-24 px-4">
+        {/* Home Button */}
+        <Link 
+          href="/"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-gray-700 hover:text-blue-600 transition-colors rounded-lg border border-gray-200 hover:border-blue-400"
+        >
+          <Home size={18} />
+          <span>Back to Home</span>
+        </Link>
+
+        {/* Header */}
+        <div className="mb-12">
+          <h5 className="uppercase tracking-wider text-gray-500 mb-2 font-semibold">Careers</h5>
+          <h2 className="text-gray-900 font-bold text-h2 mb-6">Join Our Team</h2>
+          <p className="text-gray-600 max-w-3xl leading-relaxed">
+            Help us build the future of AI-powered procurement. We value curiosity, velocity, and ownership. If you want to work on hard problems with real-world impact, we want to hear from you.
+          </p>
+        </div>
+
+        {/* Open Roles */}
+        <div className="space-y-6 mb-12">
+          {ROLES.map((role, idx) => (
+            <div
+              key={role.title}
+              className="bg-white rounded-xl border border-gray-200 p-6 transition-colors hover:border-blue-400 shadow-sm"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{role.title}</h3>
+                    <div className="flex items-center gap-4 text-gray-600">
+                      <div className="flex items-center gap-2">
+                        <MapPin size={16} className="text-blue-600" />
+                        <span>{role.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock size={16} className="text-blue-600" />
+                        <span>{role.type}</span>
                       </div>
                     </div>
-                    <a
-                      href={role.apply}
-                      className="mt-3 md:mt-0 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg transition"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Apply
-                    </a>
                   </div>
+                  
                   <button
-                    className="mt-4 text-blue-600 hover:underline text-base"
+                    className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
                     onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                     aria-expanded={openIndex === idx}
                     aria-controls={`role-details-${idx}`}
                   >
-                    {openIndex === idx ? "Hide details" : "Show details"}
+                    {openIndex === idx ? (
+                      <>
+                        <ChevronUp size={16} />
+                        <span>Hide details</span>
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown size={16} />
+                        <span>View details</span>
+                      </>
+                    )}
                   </button>
+
                   {openIndex === idx && (
                     <div
                       id={`role-details-${idx}`}
-                      className="mt-4 text-gray-700 animate-fade-in"
+                      className="text-gray-600 animate-fade-in space-y-4"
                     >
-                      <p className="mb-3">{role.description}</p>
-                      <ul className="list-disc list-inside text-gray-600 mb-2">
-                        {role.requirements.map((req, i) => (
-                          <li key={i}>{req}</li>
-                        ))}
-                      </ul>
+                      <p>{role.description}</p>
+                      <div>
+                        <h4 className="text-gray-900 font-medium mb-2">Requirements</h4>
+                        <ul className="space-y-2">
+                          {role.requirements.map((req, i) => (
+                            <li key={i} className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
+                              <span>{req}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   )}
                 </div>
-              ))}
+
+                <a
+                  href={role.apply}
+                  className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Briefcase size={18} />
+                  <span>Apply Now</span>
+                </a>
+              </div>
             </div>
-          </section>
-        </section>
-        {/* Vertical Carousel */}
-        <aside className="md:w-1/3 flex flex-col items-center md:items-start">
-          <h2 className="text-h2 font-semibold mb-4 text-left w-full pl-2 md:pl-4">
-            Expertise from
-          </h2>
-          <div ref={sliderRef} className="keen-slider hiring-carousel h-96 md:h-[54rem] w-56 md:w-64 bg-white rounded-2xl shadow border border-gray-200 overflow-hidden">
+          ))}
+        </div>
+
+        {/* Expertise Carousel */}
+        <div className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
+          <h3 className="text-gray-900 font-semibold text-xl mb-6">Our Team Comes From</h3>
+          <div ref={sliderRef} className="keen-slider h-96 md:h-[32rem]">
             <style jsx>{`
-              .hiring-carousel,
-              .hiring-carousel .keen-slider__slide {
+              .keen-slider .keen-slider__slide {
                 transition-timing-function: cubic-bezier(.17,.98,1,.99) !important;
                 transition-duration: 0.3s !important;
               }
-              @media (max-width: 768px) {
-                .hiring-carousel .keen-slider__slide img {
-                  filter: none !important;
-                }
-              }
             `}</style>
             {ALL_LOGOS.map((src, i) => (
-              <div key={i} className="keen-slider__slide flex items-center justify-center h-24 md:h-28">
+              <div key={i} className="keen-slider__slide flex items-center justify-center">
                 <Image
                   src={src}
-                  alt="Expertise logo"
+                  alt="Company logo"
                   width={160}
                   height={96}
-                  className="h-20 md:h-24 max-w-[8rem] md:max-w-[10rem] w-auto object-contain hover:grayscale-0 transition duration-300"
+                  className="h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"
                   priority={i < 4}
                 />
               </div>
             ))}
           </div>
-        </aside>
-      </div>
-      {/* Contact Section remains full width below */}
-      <section className="max-w-2xl mx-auto px-4 pb-24 text-center">
-        <h2 className="text-h2 font-display font-semibold mb-4">Don&apos;t see your role?</h2>
-        <p className="text-base text-gray-600 mb-4">
-          We&apos;re always looking for exceptional people. If you think you can help us, email us at{" "}
-          <a
-            href="mailto:careers@optimizedhq.com"
-            className="text-blue-600 underline hover:text-blue-400"
-          >
-            careers@optimizedhq.com
-          </a>
-        </p>
-      </section>
+        </div>
 
-      
+        {/* Contact Section */}
+        <div className="mt-12 bg-gray-50 rounded-xl border border-gray-200 p-8 text-center shadow-sm">
+          <h3 className="text-gray-900 font-semibold text-xl mb-4">Don&apos;t see your role?</h3>
+          <p className="text-gray-600">
+            We&apos;re always looking for exceptional people. If you think you can help us, email us at{" "}
+            <a
+              href="mailto:careers@optimizedhq.com"
+              className="text-blue-600 hover:text-blue-700 transition-colors"
+            >
+              careers@optimizedhq.com
+            </a>
+          </p>
+        </div>
+      </div>
     </main>
   )
 }

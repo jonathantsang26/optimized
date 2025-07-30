@@ -77,7 +77,7 @@ export default function ResearchDataset() {
           <h5 className="uppercase tracking-wider text-gray-400 mb-2 font-semibold">Research</h5>
           <h2 className="text-[#EFEFEF] font-bold text-h2 mb-4 sm:mb-6">Dataset</h2>
           <p className="text-gray-300 max-w-5xl leading-relaxed text-sm sm:text-base">
-            Our research dataset comprises a diverse collection of optimization problems, each carefully documented with natural language descriptions, formal parameters, and solution approaches, and verified by domain experts. Here's an example of how we structure our test cases:
+            Our research dataset comprises a diverse collection of optimization problems, each carefully documented with natural language descriptions, formal parameters, and solution approaches, and verified by domain experts. Here&apos;s an example of how we structure our test cases:
           </p>
         </div>
 
